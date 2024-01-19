@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+:root{
+    --roboto:'Roboto', sans-serif;
+    --poppins:'Poppins', sans-serif;
+    --white-color:#fff;
+    --lobster:'Lobster Two', sans-serif;
+    --p-color:#103741;
+}
+button{
+    border: none;
+    outline: none;
+}
+body{
+    padding: 0rem 7rem;
+    font-family: var(--poppins);
+    font-size: 1.6rem;
+    background-color: #fff5f3;
+}
+.nav{
+    padding: 1rem 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    background-color: var(--white-color);
+
+}
+.oxford-logo img{
+    width: 10rem;
+    height: 8rem;
+}
+.nav-elements{
+    transform: translateY(-0.6rem);
+    margin-top: 2rem;
+    display: flex;
+    gap: 3rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.join-us-btn button{
+    padding: 1.5rem;
+    font-weight: 700;
+    border-radius: 1.2rem;
+    background-color: tomato;
+    color: #fff;
+}
+.join-us-btn button:hover{
+    border: 1px solid #000;
+    background-color: rgb(255, 74, 71);
+    cursor: pointer;
+}
+.gallery-dropdown{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+.contact{
+    background-color:var(--white-color)
+}
+.cover-photo{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('contact-cover.jpg');
+    background-size: 100%;
+    padding: 10rem 4rem;    
+
+}
+.cover-photo h1{
+    font-size: 7.2rem;
+    color: #fff;
+    font-family: var(--lobster);
+    font-weight: 700;
+}
+.join-us-txt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+.join-us-txt p:nth-child(1){
+    margin-top: 3rem;
+    font-size: 4rem;
+    font-family: var(--lobster);
+    color:var(--p-color);
+    font-weight: 700;
+}
+.join-us-txt p:nth-child(2){
+    width: 50%;
+    text-align: center;
+}
+.contact-icons{
+    background-color:var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-inline: 10%;
+    margin-top: 4rem;
+}
+.contact-location div{
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: #fff5f3;
+    width: fit-content;
+    
+}
+.email-icon{
+    padding: 2rem;
+    background-color: #fff5f3;
+    border-radius: 50%;
+}
+/*#95FF00*/
+
