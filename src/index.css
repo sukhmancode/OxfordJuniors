@@ -107,21 +107,105 @@ a{
     background-color:var(--white-color);
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    padding-inline: 10%;
+    justify-content:space-around;
+    flex-wrap: wrap;
     margin-top: 4rem;
+    padding-inline-end: 5%;
 }
-.contact-location div{
-    padding: 2rem;
+.email-icon{
+    padding: 1.8rem 2rem;
     border-radius: 50%;
     background-color: #fff5f3;
     width: fit-content;
+}
+.icon-parent{
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+}
+.icon-parent p{
+    font-weight: 500;
+}
+
+.form{
+    background-color: #fff5f3;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    border-radius: 8px;
+  
+   
+}
+.form-heading{
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+input[type="text"]{
+    border: none;
+    outline: none;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+
+
+}
+::placeholder{
+    font-family: var(--poppins);
+    font-size: 1.6rem;
+}
+.name-email{    
+display: flex;
+align-items: center;
+gap: 2rem;
+}
+.subjects{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.subjects textarea{
+    border: none;
+    padding: 2rem;
+    outline: none;
+    border-radius: 8px;
+    max-width: 530px;
+    min-width: 530px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+
+}
+.form-area{
+display: flex;
+padding-inline: 2rem;
+    background-color: var(--white-color);
+    margin-top: 5rem;
     
 }
-.email-icon{
-    padding: 2rem;
-    background-color: #fff5f3;
-    border-radius: 50%;
+input[type="submit"]{
+    border: none;
+    outline: none;
+    padding: 1.6rem;
+    font-family: var(--poppins);
+    background-color: tomato;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 8px;
+}
+.fill-details-txt{
+    font-family: var(--lobster);
+    font-size: 4rem;
+    margin: 2rem 0rem;
 }
 /*#95FF00*/
 
