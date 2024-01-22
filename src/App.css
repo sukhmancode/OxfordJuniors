@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+:root{
+    --roboto:'Roboto', sans-serif;
+    --poppins:'Poppins', sans-serif;
+    --white-color:#fff;
+    --lobster:'Lobster Two', sans-serif;
+    --p-color:#103741;
+    --tomato-color:tomato;
+}
+.banner{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.banner-text{
+    margin-top: 10rem;
+    margin-inline:5rem;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+.banner-text p{
+    font-size: 1.8rem;
+}
+.banner-text h1{
+    font-family: var(--lobster);
+    font-size: 7rem;
+    color: var(--p-color);
+}
+.kid-image{
+    position: relative;
+}
+.kid-image img{
+    margin-top: 6rem;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    width: 750px;  
+}
+.banner-text button{
+    padding: 1rem 3rem;
+    border-radius: 36px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: var(--poppins);
+    background-color: var(--tomato-color);
+    color: var(--white-color);
+    margin: 1rem;
+    transition: all 0.2s ease-in;
+}
+.banner-text button:hover{
+    color: var(--tomato-color);
+    background-color: transparent;
+    border: 1px solid var(--tomato-color);
+}
+.gallery{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    gap: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px #ccc;
+}
+.gallery p{
+    padding: 1rem;
+}
+.gallery p:hover{
+    background-color: var(--tomato-color);
+    border-radius: 8px;
+}
+.gallery button{
+    outline: none;
+    padding: 1rem;
+}
+.gallery-dropdown-1{
+    top:0;
+    transform: translateY(2rem);
+    position: absolute;
+}
+.ball-compo{
+    position: absolute;
+    top:0;
+    right: 20%;
+}
+.ball-compo img{
+    width: 100px;
+    height: 100px;
+}

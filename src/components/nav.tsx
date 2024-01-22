@@ -1,6 +1,10 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
+import Gallery from "./gallery-dropdown";
+import { useState } from 'react'
 const Nav :React.FC=()=>{
+    const [open,setOpen]=useState(false);
+    
     return(
         <div className="nav">
             <div className="oxford-logo">
@@ -11,7 +15,13 @@ const Nav :React.FC=()=>{
                 <span>Home</span>
                 </Link>
                 <span>About Us</span>
-                <div className="gallery-dropdown">
+                <div className="gallery-dropdown" onMouseEnter={()=>setOpen((prev)=>!prev)}
+                onMouseLeave={()=>setOpen(false)}>
+                    <div className="gallery-dropdown-1">
+                    {
+                        open && (<Gallery/>)
+                    }
+                    </div>
                 <span>Gallery</span><IoIosArrowDown/>
                 </div>
                 <span>Games </span>

@@ -15,10 +15,12 @@ html{
     --white-color:#fff;
     --lobster:'Lobster Two', sans-serif;
     --p-color:#103741;
+    --tomato-color:tomato;
 }
 button{
     border: none;
     outline: none;
+    cursor: pointer;
 }
 body{
     padding: 0rem 7rem;
@@ -52,7 +54,7 @@ body{
     padding: 1.5rem;
     font-weight: 700;
     border-radius: 1.2rem;
-    background-color: tomato;
+    background-color: var(--tomato-color);
     color: #fff;
 }
 .join-us-btn button:hover{
@@ -73,8 +75,9 @@ a{
     background-color:var(--white-color)
 }
 .cover-photo{
+    background-repeat: no-repeat;
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('contact-cover.jpg');
-    background-size: 100%;
+    background-size: cover;
     padding: 10rem 4rem;    
 
 }
@@ -145,7 +148,6 @@ a{
     gap:2rem;
 }
 input[type="text"]{
-    border: none;
     outline: none;
     padding: 2rem 3rem;
     border-radius: 8px;
@@ -185,7 +187,7 @@ form{
 }
 .form-area{
 display: flex;
-padding-inline: 2rem;
+justify-content: center;
     background-color: var(--white-color);
     margin-top: 5rem;
     
@@ -195,7 +197,7 @@ input[type="submit"]{
     outline: none;
     padding: 1.6rem;
     font-family: var(--poppins);
-    background-color: tomato;
+    background-color: var(--tomato-color);
     color: #fff;
     font-size: 1.6rem;
     font-weight: 700;
@@ -207,5 +209,106 @@ input[type="submit"]{
     font-size: 4rem;
     margin: 2rem 0rem;
 }
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    background-color: #103741;
+    padding: 5rem 6rem;
+
+}
+.address-area div{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.address-area{
+    margin-block:2rem;
+    color: #cccccca1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap:1rem;
+}
+.address-area div {
+    transition: all 0.2s ease-in;
+}
+.address-area div:hover{
+    color: var(--tomato-color);
+    scale:1.070;  
+    cursor: pointer;
+}
+.facebook{
+    border: 1px solid #ccc;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+}
+.img-area{
+    margin-top: 1rem;
+    width: 300px;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.img-area img{
+    border: 5px solid var(--white-color);
+    width: 90px;
+    border-radius: 8px;
+}
+.address-section h2{
+    font-size: 2.8rem;
+    color: #fff;
+    font-family: var(--lobster);
+}
+.news-letter{
+    width:300px;
+}
+.newsletter-input{
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid #ccc
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.address-section:nth-child(2){
+    display: flex;
+    flex-direction: column;
+}
+.newsletter-btn{
+    border: none;
+    outline: none;
+    background-color: var(--tomato-color);
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    border-radius: 8px;
+    color:#fff;
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.footer-links{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap:1.5rem;
+}
+.footer-links div{
+    transition: all 0.3s ease-in;
+
+}
+.footer-links div:hover{
+
+    cursor: pointer;
+    display: flex;
+    background-color: tomato;
+}
+
 /*#95FF00*/
 
