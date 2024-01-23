@@ -23,7 +23,6 @@ button{
     cursor: pointer;
 }
 body{
-    padding: 0rem 7rem;
     font-family: var(--poppins);
     font-size: 1.6rem;
     background-color: #fff5f3;
@@ -36,7 +35,6 @@ body{
     align-items: center;
     border-bottom: 1px solid #ccc;
     background-color: var(--white-color);
-
 }
 .oxford-logo img{
     width: 10rem;
@@ -131,15 +129,12 @@ a{
 .icon-parent p{
     font-weight: 500;
 }
-
 .form{
     background-color: #fff5f3;
     display: flex;
     flex-direction: column;
     padding: 2rem 5rem;
     border-radius: 8px;
-  
-   
 }
 .form-heading{
     padding-inline: 1rem;
@@ -148,12 +143,11 @@ a{
     gap:2rem;
 }
 input[type="text"]{
+    border: none;
     outline: none;
     padding: 2rem 3rem;
     border-radius: 8px;
     font-size: 1.6rem;
-
-
 }
 ::placeholder{
     font-family: var(--poppins);
@@ -182,15 +176,12 @@ form{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    
-
 }
 .form-area{
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
     background-color: var(--white-color);
-    margin-top: 5rem;
-    
+    margin-top: 5rem;   
 }
 input[type="submit"]{
     border: none;
@@ -215,7 +206,6 @@ input[type="submit"]{
     margin-top: 10rem;
     background-color: #103741;
     padding: 5rem 6rem;
-
 }
 .address-area div{
     display: flex;
@@ -273,9 +263,7 @@ input[type="submit"]{
 .footer-links{
     display: flex;
     flex-direction: column;
-  
 }
-
 .address-section:nth-child(2){
     display: flex;
     flex-direction: column;
@@ -301,14 +289,14 @@ input[type="submit"]{
 }
 .footer-links div{
     transition: all 0.3s ease-in;
-
 }
 .footer-links div:hover{
-
     cursor: pointer;
     display: flex;
     background-color: tomato;
 }
-
+.tomato{
+    color:#fff;
+}
 /*#95FF00*/
 

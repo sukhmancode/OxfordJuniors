@@ -15,7 +15,7 @@ const Nav :React.FC=()=>{
                 <span>Home</span>
                 </Link>
                 <span>About Us</span>
-                <div className="gallery-dropdown" onMouseEnter={()=>setOpen((prev)=>!prev)}
+                <div className="gallery-dropdown" onMouseEnter={()=>setOpen(true)}
                 onMouseLeave={()=>setOpen(false)}>
                     <div className="gallery-dropdown-1">
                     {
