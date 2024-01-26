@@ -25,7 +25,6 @@ button{
 body{
     font-family: var(--poppins);
     font-size: 1.6rem;
-    background-color: #fff5f3;
 }
 .nav{
     padding: 1rem 3rem;
@@ -54,10 +53,10 @@ body{
     border-radius: 1.2rem;
     background-color: var(--tomato-color);
     color: #fff;
+    transition: all 0.3s ease-in;
 }
 .join-us-btn button:hover{
-    border: 1px solid #000;
-    background-color: rgb(255, 74, 71);
+    background-color: rgba(255, 74, 71, 0.773);
     cursor: pointer;
 }
 .gallery-dropdown{
@@ -80,9 +79,8 @@ a{
 
 }
 .cover-photo h1{
-    font-size: 7.2rem;
+    font-size: 6rem;
     color: #fff;
-    font-family: var(--lobster);
     font-weight: 700;
 }
 .join-us-txt{
@@ -96,9 +94,8 @@ a{
 .join-us-txt p:nth-child(1){
     margin-top: 3rem;
     font-size: 4rem;
-    font-family: var(--lobster);
     color:var(--p-color);
-    font-weight: 700;
+    font-weight: 500;
 }
 .join-us-txt p:nth-child(2){
     width: 50%;
@@ -153,11 +150,11 @@ input[type="text"]{
     font-family: var(--poppins);
     font-size: 1.6rem;
 }
-.name-email{    
-display: flex;
-align-items: center;
-gap: 2rem;
-}
+    .name-email{    
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    }
 .subjects{
     display: flex;
     flex-direction: column;
@@ -204,7 +201,7 @@ input[type="submit"]{
     display: flex;
     justify-content: space-between;
     margin-top: 10rem;
-    background-color: #103741;
+    background-color: #253b70;
     padding: 5rem 6rem;
 }
 .address-area div{
@@ -214,7 +211,7 @@ input[type="submit"]{
 }
 .address-area{
     margin-block:2rem;
-    color: #cccccca1;
+    color: var(--white-color);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -248,9 +245,8 @@ input[type="submit"]{
     border-radius: 8px;
 }
 .address-section h2{
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: #fff;
-    font-family: var(--lobster);
 }
 .news-letter{
     width:300px;
@@ -296,7 +292,7 @@ input[type="submit"]{
     background-color: tomato;
 }
 .tomato{
-    color:#fff;
+    color:#253b70
 }
 /*#95FF00*/
 

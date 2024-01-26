@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../components/nav'
 import { Link } from 'react-router-dom'
+import Footer from '../components/footer'
 
 const Home:React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const Home:React.FC = () => {
         <Nav />
         <div className="banner">
          <div className="banner-text">
-            <h1>We Create Magic For Kids</h1>
+            <h1>"Nurturing young minds <span style={{color:'tomato'}}>with</span> Oxford's academic <span style={{textDecoration:"line-through"}}>excellence</span>".</h1>
             <p>Dream is often a child’s first introduction to school. The learning library surplus of online resources help new learners transition into the scholastic world of ABCs and 123s.</p>
             <Link to={'/contact'}>
             <button>Book a Visit</button>
@@ -16,8 +17,8 @@ const Home:React.FC = () => {
          </div>
 
          <div className="kid-image">
-          <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6329a961c0521594d3234120_portrait-smiling-little-kid-standing%201.webp" alt="" />
-
+          <img className='kid-img-main' src="https://themewagon.github.io/kider/img/appointment.jpg" alt="" />
+{/*
           <div className='ball-compo'>
             <img src="ball.png" alt="" />
             <p>Funny Games</p>
@@ -27,6 +28,7 @@ const Home:React.FC = () => {
             <img src="teacher.png" alt="" />
             <p>Pro Teachers</p>
           </div>
+  */}
          </div>
        </div>
 
@@ -100,7 +102,7 @@ const Home:React.FC = () => {
             </div>
             <div className="oppurtunity-feature">
               <h3>Education Program</h3>
-              <p>"Guiding Tiny Steps towards Big Dreams"</p>
+              <p>"Building Bright Futures  Futures Futures"</p>
             </div>
           </div>
 
@@ -110,18 +112,18 @@ const Home:React.FC = () => {
             </div>
             <div className="oppurtunity-feature">
               <h3>Funny Games</h3>
-              <p>"Guiding Tiny Steps towards Big Dreams"</p>
+              <p>"Playful Pals and Giggles Galore Galore"</p>
             </div>
           </div>
 
-          
+            
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
             <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5c24771a33d8879876_7923951_book_reading_school_education_library_icon%203.webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Sport Program</h3>
-              <p>"Guiding Tiny Steps towards Big Dreams"</p>
+              <p>"Guiding Tiny Steps towards Big dream"</p>
             </div>
           </div>
 
@@ -146,6 +148,23 @@ const Home:React.FC = () => {
           </div>
           </div>
        </section>
+
+       <section className='look-around-section'>
+        <div className="look-around-img">
+          <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63316f6e540a10031a2d0c6e_8969101_smartphone_childhood_toys_kids_icon%201.webp" alt="" />
+        </div>
+        <div className="look-around-para">
+          <h2>Come Over And <span style={{color:"#253b70"}}>Look Around</span></h2>
+          <p>We will explain everything you are interested. Join our new session. If you have any questions or enquiries please feel free to contact us on the following details provided below or alternatively you can complete our online enquiry form also located below and we will get back to you as soon as possible…</p>
+
+          <div className="look-around-btns">
+            <button>Book A Visit</button>
+            <button>Let's Get in Touch</button>
+          </div>
+        </div>
+       </section>
+
+       <Footer/>
     </div>
   )
 }

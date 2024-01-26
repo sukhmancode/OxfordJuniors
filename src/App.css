@@ -24,34 +24,41 @@ button{
     font-family: var(--poppins);
 }
 .banner{
-    padding-inline: 10rem;
+    padding-inline: 9rem;
     display: flex;
     justify-content: space-between;
 }
 .banner-text{
+    
     margin-top: 10rem;
-    margin-inline:5rem;
     display: flex;
     flex-direction: column;
     gap:2rem;
 }
 .banner-text p{
     font-size: 1.8rem;
+    width: 70%;;
 }
 .banner-text h1{
-    font-family: var(--lobster);
-    font-size: 7rem;
+    width: 70%;
+    font-family: var(--poppins);
+    font-size: 5rem;
     color: #253b70;
 }
 .kid-image{
     position: relative;
 }
 .kid-image img{
-    margin-top: 6rem;
+ 
     opacity: 1;
     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-    width: 700px;  
+ 
+}
+.kid-img-main{
+    margin-block:4rem;
+    width: 500px;
+    border-radius: 12px;
 }
 .banner-text button{
     padding: 1rem 3rem;
@@ -165,9 +172,9 @@ button{
     width: 50%;
 }
 .heading p{
-    font-weight: 500;
+    font-weight: 700;
     font-size: 4rem;
-    color:#425175;
+    color:var(--white-color);
 }
 .feature-para{
     display: flex;
@@ -195,7 +202,6 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 .p-white{
@@ -255,6 +261,7 @@ button{
     margin-top: 3rem;
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 .oppurtunity-feature h3{
     color: #253b70;
@@ -265,6 +272,156 @@ button{
     align-items: center;
     justify-content: center;
     display: flex;
-    width: 90%;
+    width: 70%;
     flex-wrap: wrap;
+    gap: 2rem;
+    padding-inline-start: 10rem;
+}
+.oppurtunity-image{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color: rgba(255, 99, 71, .300)
+}
+.oppurtunity-image img{
+    width: 100px;
+    height: 100px;
+}
+.oppurtunity-feature p{
+    width: 70%;
+    color: #253b70;
+}
+.look-around-section{
+    background-color: var(--tomato-color);
+    padding: 10rem 17rem;
+    display: flex;
+    justify-content: space-between   ;
+    align-items: center;
+}
+.look-around-img{
+    display: flex;
+    
+}
+.look-around-para h2{
+    width: 80%;
+    font-size: 4rem;
+}
+.look-around-para{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+}
+.look-around-btns{
+    margin-top: 3rem;
+    display: flex;
+    gap: 6rem;
+   
+}
+.look-around-btns button{
+    padding: 1rem 2rem; 
+    border-radius: 3.2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.look-around-btns button:nth-child(1){
+    background-color: #253b70;
+    color: var(--white-color);
+    transition: all 0.2s ease-in;
+}
+.look-around-btns button:nth-child(1):hover{
+    background-color: var(--white-color);
+    color:#253b70;
+}
+.look-around-btns button:nth-child(2){
+    color: var(--white-color);
+    background: #253b70;
+    border: 1px solid #253b70;
+    transition: all 0.3s ease-in;
+}
+.look-around-btns button:nth-child(2):hover{
+background-color: var(--white-color);
+color: var(--tomato-color);
+}
+
+/*admission*/
+.admission-background{
+    padding-block: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-image:linear-gradient(rgba(248, 58, 58, 0.2), rgba(197, 35, 35, 0.3)),
+    url('admission-cover.webp');
+    background-repeat: no-repeat;
+    background-position:bottom;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    color: var(--white-color);
+    background-size: cover;
+}
+.admission-background h1{
+    font-family: var(--poppins);
+    font-size: 6rem;
+}
+.admission-background p{
+    font-size: 1.8rem;
+}
+.form-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9rem;
+}
+.form-admission {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+align-items: center;
+justify-content: center ;
+    padding: 2rem;
+    
+}
+.form-admission input[type="text"]{
+    border: 1px solid #ccc;
+    border-radius: 3.6rem;
+    width: 600px;
+}
+.form-admission input[type="number"]{
+    border: 1px solid #ccc;
+    border-radius: 3.6rem;
+    width: 600px;
+    padding: 2rem;
+}
+.form-admission input[type="submit"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.admission-steps{
+    padding: 3rem 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+.admission-card{
+    box-shadow: 0 0 4px #ccc;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.6rem;
+    gap: 1rem;
+}
+.admission-card p{
+    text-align: center;
+    width: 70%;
+}
+.admission-card h1{
+    color: var(--tomato-color);
+    border: 1px dashed #253b70;
+    padding: .4rem 2rem;
+    border-radius: 50%;
 }

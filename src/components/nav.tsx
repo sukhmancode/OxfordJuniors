@@ -14,7 +14,9 @@ const Nav :React.FC=()=>{
                 <Link to={'/'}>
                 <span>Home</span>
                 </Link>
+                <Link to={'/about'}>
                 <span>About Us</span>
+                </Link>
                 <div className="gallery-dropdown" onMouseEnter={()=>setOpen(true)}
                 onMouseLeave={()=>setOpen(false)}>
                     <div className="gallery-dropdown-1">
@@ -24,7 +26,9 @@ const Nav :React.FC=()=>{
                     </div>
                 <span>Gallery</span><IoIosArrowDown/>
                 </div>
-                <span>Games </span>
+                <Link to={'/admission'}>
+                <span>Admission </span>
+                </Link>
                 <Link to={'/contact'}>
                 <span>Contact Us</span>
                 </Link>
