@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../components/nav'
 import { Link } from 'react-router-dom'
 import Footer from '../components/footer'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home:React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      disable: "phone",
+      duration: 800,
+      easing: "ease-out-cubic",
+    });
+  }, []);
   return (
     <div className='home'>
-        <Nav />
-        <div className="banner">
-         <div className="banner-text">
+        <Nav/>
+        <div  className="banner">
+         <div className="banner-text" data-aos="fade-right">
             <h1>"Nurturing young minds <span style={{color:'tomato'}}>with</span> Oxford's academic <span style={{textDecoration:"line-through"}}>excellence</span>".</h1>
             <p>Dream is often a child’s first introduction to school. The learning library surplus of online resources help new learners transition into the scholastic world of ABCs and 123s.</p>
             <Link to={'/contact'}>
@@ -16,7 +25,7 @@ const Home:React.FC = () => {
             </Link>
          </div>
 
-         <div className="kid-image">
+         <div className="kid-image" data-aos="fade-left">
           <img className='kid-img-main' src="https://themewagon.github.io/kider/img/appointment.jpg" alt="" />
 {/*
           <div className='ball-compo'>

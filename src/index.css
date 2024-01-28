@@ -25,6 +25,7 @@ button{
 body{
     font-family: var(--poppins);
     font-size: 1.6rem;
+    overflow-x: hidden;
 }
 .nav{
     padding: 1rem 3rem;
@@ -40,12 +41,17 @@ body{
     height: 8rem;
 }
 .nav-elements{
-    transform: translateY(-0.6rem);
+transform: translateY(-0.6rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 2rem;
     display: flex;
     gap: 3rem;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s ease-in;
+
 }
 .join-us-btn button{
     padding: 1.5rem;
@@ -117,7 +123,6 @@ a{
     width: fit-content;
 }
 .icon-parent{
-  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,7 +135,7 @@ a{
     background-color: #fff5f3;
     display: flex;
     flex-direction: column;
-    padding: 2rem 5rem;
+    padding:0rem 5rem;
     border-radius: 8px;
 }
 .form-heading{
@@ -193,7 +198,7 @@ input[type="submit"]{
     border-radius: 8px;
 }
 .fill-details-txt{
-    font-family: var(--lobster);
+    font-family: var(--poppins);
     font-size: 4rem;
     margin: 2rem 0rem;
 }
@@ -216,6 +221,9 @@ input[type="submit"]{
     flex-direction: column;
     position: relative;
     gap:1rem;
+}
+.address-area input[type="text"]{
+    border: 1px solid #ccc;
 }
 .address-area div {
     transition: all 0.2s ease-in;
@@ -269,11 +277,11 @@ input[type="submit"]{
     outline: none;
     background-color: var(--tomato-color);
     position: absolute;
-    bottom: 3%;
+    bottom: 4%;
     right: 2%;
     border-radius: 8px;
     color:#fff;
-    padding: 1.5rem;
+    padding: 1.2rem;
     font-weight: 700;
     font-size: 1.6rem;
 }
@@ -292,7 +300,53 @@ input[type="submit"]{
     background-color: tomato;
 }
 .tomato{
-    color:#253b70
+    color:#253b70;
 }
 /*#95FF00*/
 
+@media screen and (max-width:768px) {
+    .mobile-navbar-btn{
+        display: inline-block;
+
+        .mobile-nav-icon{
+            font-size: 4.2rem;
+            z-index: 99999;
+        }
+    }
+    .nav-elements{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top:10%;
+        left:0;
+        transform: translate(100%);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        font-size: 3rem;
+        z-index: 111;
+    }
+    .active .mobile-nav-icon{
+        display: none;
+        font-size: 4rem;
+        position: absolute;
+        top:5%;
+        right: 4%;
+        color: #000;
+    }
+    .active .close-outline{
+        display: inline-block;
+    }
+    .active .nav-elements{
+        box-shadow: 0 0 10px #ccc;
+        padding: 2rem;
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0);
+        width: 50%;
+        background-color: #fffdfd;
+        z-index: 999;
+        top:-3%;
+    }
+  }

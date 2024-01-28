@@ -49,11 +49,9 @@ button{
     position: relative;
 }
 .kid-image img{
- 
     opacity: 1;
     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
- 
 }
 .kid-img-main{
     margin-block:4rem;
@@ -299,7 +297,6 @@ button{
 }
 .look-around-img{
     display: flex;
-    
 }
 .look-around-para h2{
     width: 80%;
@@ -372,14 +369,14 @@ color: var(--tomato-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 9rem;
+    margin-top: 2rem;
 }
 .form-admission {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-align-items: center;
-justify-content: center ;
+    align-items: center;
+    justify-content: center ;
     padding: 2rem;
     
 }
@@ -399,15 +396,23 @@ justify-content: center ;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.form-admission input[type="submit"]:hover{
+    border-radius: 3.2rem;
+    background-color: rgba(255, 99, 71, 0.543);
+
 }
 .admission-steps{
+    align-items: center;
     padding: 3rem 10rem;
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
 }
 .admission-card{
     box-shadow: 0 0 4px #ccc;
-    padding: 1rem;
+    padding: 1rem 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -418,6 +423,8 @@ justify-content: center ;
 .admission-card p{
     text-align: center;
     width: 70%;
+    color: #425175;
+    font-size: 1.8rem;
 }
 .admission-card h1{
     color: var(--tomato-color);
@@ -425,3 +432,138 @@ justify-content: center ;
     padding: .4rem 2rem;
     border-radius: 50%;
 }
+.admission-card h3{
+    font-size: 2.4rem;
+    color: #253b70;
+}
+.appoint-head{
+    padding-top: 10rem;
+    margin-bottom: 2rem;
+}
+.appoint-head h1{
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    color: #4a79e4;
+}
+.appoint-head h1 span{
+    margin-left: 1rem;
+color: var(--tomato-color);
+}
+.mobile-navbar-btn{
+    display: none;
+    .close-outline{
+        display: none;
+    }
+}
+.mobile-navbar-btn[name="close-outline"]{
+    display: none;
+}
+@media screen and (max-width:1224px) {
+    .banner{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-inline: 2rem;
+      }
+      .form-area{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap:5rem;
+      }
+}
+@media screen and (max-width:1024px) {
+    html,body{
+        margin:0;
+        padding:0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      html{
+        font-size: 58%;
+      }
+     
+    .feature-cards{
+        flex-wrap: wrap;
+    }
+    .look-around-section{
+        padding: 10rem 5rem;
+    }
+    .look-around-section{
+        flex-direction: column;
+    }
+    .all-features{
+        width: 100%;
+        padding-inline-start: 1rem;
+        align-items: flex-start;
+    }
+}
+  @media screen and (max-width:830px) {
+
+    .feature-cards{
+        flex-direction: column;
+    }
+   
+    .look-around-section img{
+        width: 35rem;
+    }
+   
+    
+
+  .banner-text h1{
+    font-size: 3.5rem;
+    width: 100%;
+    padding: 0rem;
+}
+.banner-text p{
+    width: 100%;
+}
+.look-around-btns{
+    flex-direction: column;
+}
+.oppurtunity-heading{
+    width: 80%;
+    font-size: 3.5rem;
+}
+.heading{
+    width: 80%;
+   
+}
+.heading p{
+    font-size: 3.5rem;
+}
+.look-around-para h2{
+    width: 100%;
+}
+.footer{
+    flex-direction: column;
+    gap: 2rem;
+ }
+}
+
+  @media screen and (max-width:650px) {
+.heading{
+    width: 100%;
+}
+.heading p{
+    font-size: 3.5rem;
+}
+.feature-para{
+    width: 100%;
+}
+.kid-img-main{
+    width: 320px;
+}
+  }
+@media screen and (max-width:400px) {
+    html{
+        font-size: 45%;
+    }
+    .banner{
+        padding-inline: 0rem;
+    }
+    
+}
+  

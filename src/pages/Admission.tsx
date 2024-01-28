@@ -12,16 +12,26 @@ const Admission :React.FC= () => {
             <p>We are gonna help you – Just read the information down below.</p>
         </div>
 
+        <div className="appoint-head">
+          <h1>We Look Forward To <span> Seeing You</span></h1>
+        </div>
+
         <div className="admission-steps">
           <div className="admission-card">
             <h1>1</h1>
             <h3>First Step</h3>
             <p>Visit KinderGarten during an Open House.</p>
           </div>
+          <div className="step-arrow">
+            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
+          </div>
           <div className="admission-card">
           <h1>2</h1>
             <h3>Second Step</h3>
             <p>Submit an application with the appropriate days.</p>
+          </div>
+          <div className="step-arrow">
+            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
           </div>
           <div className="admission-card">
           <h1>3</h1>

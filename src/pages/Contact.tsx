@@ -6,7 +6,6 @@ import { FaPhoneAlt, FaWpforms } from "react-icons/fa";
 import Footer from '../components/footer';
 
 const Contact: React.FC = () => {
-
   return (
     <div className='contact'>
       <Nav />
