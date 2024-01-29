@@ -53,6 +53,22 @@ transform: translateY(-0.6rem);
     transition: all 0.2s ease-in;
 
 }
+.nav-elements span{
+    position: relative;
+}
+.nav-elements span:after{
+    content:"";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.nav-elements span:hover:after{
+    width: 100%;
+}
 .join-us-btn button{
     padding: 1.5rem;
     font-weight: 700;

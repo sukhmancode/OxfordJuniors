@@ -5,7 +5,6 @@ import Footer from '../components/footer'
 const Admission :React.FC= () => {
   return (
     <div className='admission'>
-     
         <Nav/>
         <div className='admission-background'>
             <h1>Admission</h1>
@@ -26,7 +25,7 @@ const Admission :React.FC= () => {
             <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
           </div>
           <div className="admission-card">
-          <h1>2</h1>
+            <h1>2</h1>
             <h3>Second Step</h3>
             <p>Submit an application with the appropriate days.</p>
           </div>

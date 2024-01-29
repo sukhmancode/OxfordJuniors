@@ -46,7 +46,7 @@ const Home:React.FC = () => {
          <p>We Are <span className='tomato'>Oxford</span> Junior's And Childhood Is Our <span className='tomato'>Passion</span>.</p>
           </div>
           <div className="feature-para">
-            <p>We are excited and pleased to introduce you to the wonderful, passionate and committed educators who are working at Oxford Juniors,kapurthala. Please take a moment to meet “Our Family!” We invited each of them to describe why they love working with children.</p>
+            <p>We are excited and pleased to introduce you to the wonderful, passionate and committed educators who are working at <b>Oxford Juniors,kapurthala.</b> Please take a moment to meet “Our Family!” We invited each of them to describe why they love working with children.</p>
           </div>
 
           <div className="feature-cards">

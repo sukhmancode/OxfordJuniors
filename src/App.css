@@ -54,7 +54,7 @@ button{
     transform-style: preserve-3d;
 }
 .kid-img-main{
-    margin-block:4rem;
+    margin-block:7rem;
     width: 500px;
     border-radius: 12px;
 }
@@ -75,12 +75,15 @@ button{
     border: 1px solid var(--tomato-color);
 }
 .gallery{
+   transform: translateY(3rem);
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
     gap: 1rem;
+    border-bottom: 1px solid #000;
     border-radius: 8px;
     box-shadow: 0 5px 5px #ccc;
+    z-index: 111111111111;
 }
 .gallery p{
     padding: 1rem;
