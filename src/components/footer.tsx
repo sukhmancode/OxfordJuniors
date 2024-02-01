@@ -2,7 +2,10 @@ import React from 'react'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import { MdEmail } from "react-icons/md";
 
 const Footer :React.FC= () => {
   return (
@@ -10,9 +13,23 @@ const Footer :React.FC= () => {
         <div className="address-section">
             <h2>Get In Touch</h2>
             <div className="address-area">
-                <div><FaLocationDot/> <p>123 Street, New York, USA</p></div>
-                <div><FaLocationDot/> <p>123 Street, New York, USA</p></div>
-                <div><FaLocationDot/> <p>123 Street, New York, USA</p></div>
+            <Link target='_blank' to={'https://maps.app.goo.gl/EqEZ3LRwrtakArG7A'}>
+            <img className='map-image' src="map-image.png" alt="" />
+                <div className='address-footer'>
+                  <p><FaLocationDot size={25} color='#fff'/></p>
+                  <p>199CJ+CG7,Railway Rd,Ashok Vihar</p>
+                </div>
+                <div className='ddress-foote'>
+                  <p><FaPhone size={25} color='#fff'/></p>
+                  <p></p>
+                  <a href="tel:+91-94644-84438">+91-94644-84438</a>
+                </div>
+                <div className='address-footer'>
+                  <p><MdEmail size={25} color='#fff'/></p>
+                  <a href="mailto:www.oxfordjuniors.com?subject=This is an email">www.oxfordjuniors.com</a>
+                </div>
+                </Link>
+
             </div>
             <div className="footer-links">
                 <div className="facebook"><FaFacebookF color='#fff' size={20}/></div>
@@ -29,7 +46,6 @@ const Footer :React.FC= () => {
               <div>&gt;<p>Our Services</p></div>
               <div>&gt;<p>Privacy Policy</p></div>
               <div>&gt;<p>Terms & Condition</p></div>
-              
             </div>
         </div>
 

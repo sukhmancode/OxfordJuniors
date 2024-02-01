@@ -218,17 +218,31 @@ input[type="submit"]{
     font-size: 4rem;
     margin: 2rem 0rem;
 }
+.map-image{
+    width: 200px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in;
+}
+.map-image:hover{
+    transform: translateY(-1rem);
+}
 .footer{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 10rem;
     background-color: #253b70;
-    padding: 5rem 6rem;
+    padding: 1rem 6rem;
 }
 .address-area div{
     display: flex;
     align-items: center;
     gap: 0.7rem;
+    
+}
+
+.address-footer{
+    display: flex;
+    width: 50%;
 }
 .address-area{
     margin-block:2rem;
@@ -278,7 +292,8 @@ input[type="submit"]{
 .newsletter-input{
     margin-top: 1rem;
     background-color: transparent;
-    border: 1px solid #ccc
+    border: 1px solid #ccc;
+    color:var(--white-color)
 }
 .footer-links{
     display: flex;
