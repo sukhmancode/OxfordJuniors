@@ -235,11 +235,9 @@ button{
     transition: all 0.3s ease-in;
 
 }
-.learn-more-btn button:hover{
-    
+.learn-more-btn button:hover{    
     color:#253b70;
     background-color: var(--white-color);
-    border: 1px solid #253b70;
 }
 .oppurtunity-section{
     padding-block: 7rem;
@@ -375,7 +373,7 @@ color: var(--tomato-color);
     margin-top: 2rem;
 }
 .form-admission {
-    margin-top: 2rem;
+    margin-block: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -551,6 +549,81 @@ gap: 2rem;
     height: fit-content;
     pointer-events: none;
 }
+/* ABOUT US */
+.about-photo{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://t3.ftcdn.net/jpg/02/83/86/76/240_F_283867624_9bdcQa1ReMgcT8UHvz46ZwytkyjHCmeC.jpg');
+    padding: 13rem 4rem;   
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+    color: var(--white-color);
+    font-weight: 500;
+    background-position: top;
+    box-shadow: 0 0 10px #ccc;
+}
+.about-photo h1{
+    font-size: 6rem;
+    padding: 1rem;
+    color: var(--tomato-color );
+}
+.about-photo p{
+    width: 50%;
+    color: #1044bd;
+    text-align: center;
+}
+.welcome-about{
+    padding:10rem;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+}
+.welcome-photo img{
+    margin : 10rem;
+    transform: scale(2);
+    width: 280px;
+    border-radius: .6rem;
+    height: 250px;
+}
+.welcome-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 50%;
+    color: #253b70;
+}
+.welcome-content h1{
+    font-size: 4.4rem;
+}
+.welcome-p p{
+    width: 80%;
+
+    font-weight: 500;
+}
+.welcome-p-content{
+    width: 80%;
+    margin-top: 3rem;
+}
+.tick{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--tomato-color);
+    padding: 1.5rem;
+    position: relative;
+
+}
+.tick-content{
+    top: -15%;
+    left: 10%;
+    font-size: 2.5rem;
+    
+    position: absolute;
+    
+}
+
 @media screen and (max-width:1224px) {
     .banner{
         align-items: center;

@@ -37,8 +37,8 @@ body{
     background-color: var(--white-color);
 }
 .oxford-logo img{
-    width: 10rem;
-    height: 8rem;
+    width: 100%;
+    height: 10rem;
 }
 .nav-elements{
 transform: translateY(-0.6rem);
@@ -95,15 +95,20 @@ a{
 }
 .cover-photo{
     background-repeat: no-repeat;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('contact-cover.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('contact-cover.jpg');
     background-size: cover;
-    padding: 10rem 4rem;    
+    padding: 13rem 4rem;   
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+    color: var(--white-color);
+    font-weight: 500;
 
 }
 .cover-photo h1{
     font-size: 6rem;
-    color: #fff;
-    font-weight: 700;
+    padding: 1rem;
 }
 .join-us-txt{
     display: flex;
@@ -199,7 +204,7 @@ form{
     display: flex;
     justify-content: center;
     background-color: var(--white-color);
-    margin-top: 5rem;   
+    margin-block: 5rem;   
 }
 input[type="submit"]{
     border: none;
@@ -239,7 +244,6 @@ input[type="submit"]{
     gap: 0.7rem;
     
 }
-
 .address-footer{
     display: flex;
     width: 50%;

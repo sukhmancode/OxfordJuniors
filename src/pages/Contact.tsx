@@ -11,6 +11,7 @@ const Contact: React.FC = () => {
       <Nav />
       <div className="cover-photo">
         <h1>Contact us</h1>
+        <p>Connecting Dreams, Building Relationships: Where Your Journey Begins with Us</p>
       </div>
       <div className="join-us-txt">
         <p>Get In Touch</p>
