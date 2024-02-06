@@ -9,7 +9,7 @@ const Home:React.FC = () => {
   useEffect(() => {
     AOS.init({
       disable: "phone",
-      duration: 800,
+      duration: 1800,
       easing: "ease-out-cubic",
     });
   }, []);
@@ -49,8 +49,8 @@ const Home:React.FC = () => {
             <p>We are excited and pleased to introduce you to the wonderful, passionate and committed educators who are working at <b>Oxford Juniors,kapurthala.</b> Please take a moment to meet “Our Family!” We invited each of them to describe why they love working with children.</p>
           </div>
 
-          <div className="feature-cards">
-            <div className="environment-card" data-aos="fade-left">
+          <div className="feature-cards" >
+            <div className="environment-card"data-aos="zoom-in" >
               <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b01ca79ecfda9e10826fd_9443147_young_man_young%20man_cool%20boy_happy%20boy_icon%201%20(3)%201.png" alt="" />
               <div className='environment-card-p'>
               <h3 style={{color:"#fff"}}>Home-like Environment</h3>
@@ -58,7 +58,7 @@ const Home:React.FC = () => {
               </div>
             </div>
 
-            <div className="environment-card" data-aos="fade-left">
+            <div className="environment-card" data-aos="zoom-in">
               <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b023a31836d27e3e3bab4_8721663_lock_security_protect_secure_icon%201%20(8).png" alt="" />
               <div className='environment-card-p'>
               <h3>Safety and Security</h3>
@@ -66,7 +66,7 @@ const Home:React.FC = () => {
               </div>
             </div>
 
-            <div className="environment-card" data-aos="fade-right">
+            <div className="environment-card" data-aos="zoom-in">
               <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b0346f5762dd76c219ea1_9254052_certificate_degree_diploma_ribbon%20badge_quality_icon%201%20(3).png" alt="" />
               <div className='environment-card-p'>
               <h3 style={{color:"#fff"}}>Quality Educators</h3>
@@ -74,7 +74,7 @@ const Home:React.FC = () => {
               </div>
             </div>
 
-            <div className="environment-card" data-aos="fade-right">
+            <div className="environment-card" data-aos="zoom-in">
               <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b034598f8dcb8e04e871e_9053991_leisure_dice_gambling_gamble_casino_icon%201%20(3).png" alt="" />
               <div className='environment-card-p'>
               <h3>Play to Learn</h3>

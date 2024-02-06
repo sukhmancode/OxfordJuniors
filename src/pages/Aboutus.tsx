@@ -9,6 +9,10 @@ const Aboutus:React.FC = () => {
         <h1>About us</h1>
         <p>Where Tiny Minds Blossom: Nurturing Curiosity, Inspiring Creativity, and Building Futures at <b>Oxford Junior's</b></p>
       </div>
+      <div className="values-content">
+        <h1><span style={{color:'tomato'}}>Our Core</span> <span style={{color:"#253b70"}}> Values</span></h1>
+        <p>At Oxford Juniors's, we always put the quality of teaching and caring for children first, so please rest assured when choosing our kindergarten.</p>
+      </div>
       <div className="welcome-about">
         <div className="welcome-photo">
           <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087dcd8c2ca7d0021b08266_optimized_1396_c1396x930-0x0.webp" alt="" />
@@ -22,6 +26,7 @@ const Aboutus:React.FC = () => {
           <div className="welcome-p-content">
             <p>Children are small adults ready to explore this world. And our goal is to help them in this. At Kidtime, we help your kids learn new things while playing and prepare them for school without interfering with their creativity.</p>
           </div>
+          <div className="welcome-check-parent">
           <div className="welcome-check">
             <div className="welcome-check-here">
               <div className="tick">
@@ -29,20 +34,30 @@ const Aboutus:React.FC = () => {
                <p style={{color:"#fff"}}>✔</p>
               </div>
               </div>
-              <div className="tick">
-              <div className="tick-content">
-               <p style={{color:"#fff"}}>✔</p>
-              </div>
-              </div>
-              <div className="tick">
-              <div className="tick-content">
-               <p style={{color:"#fff"}}>✔</p>
-              </div>
-              </div>
-            </div>
-            <div className="welcome-check-here"></div>
-            <div className="welcome-check-here"></div>
+              <p>Supporting your child’s personality</p>
+            </div>        
           </div>
+          <div className="welcome-check">
+            <div className="welcome-check-here">
+              <div className="tick">
+              <div className="tick-content">
+               <p style={{color:"#fff"}}>✔</p>
+              </div>
+              </div>
+              <p>Professional & dedicated teachers.</p>
+            </div>        
+          </div>
+          <div className="welcome-check">
+            <div className="welcome-check-here">
+              <div className="tick">
+              <div className="tick-content">
+               <p style={{color:"#fff"}}>✔</p>
+              </div>
+              </div>
+              <p>Indoor and outdoor creative games</p>
+            </div>        
+          </div>
+        </div>
         </div>
       </div>
     </div>
