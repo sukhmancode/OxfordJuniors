@@ -623,7 +623,7 @@ gap: 2rem;
 }
 .tick-content{
     position: absolute;
-    top: -15%;
+    top: -5%;
     left: 10%;
     font-size: 2.5rem;
 }
@@ -649,6 +649,24 @@ gap: 2rem;
     font-weight: 500;
     text-align: center;
     width: 50%;
+}
+.about-card-img{
+    width: 350px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.cards-here{
+    margin-block: 5rem;
+    display: flex;
+    padding-inline: 5rem;
+    justify-content: space-between;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 @media screen and (max-width:1224px) {
     .banner{
