@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from '../components/nav'
 import AboutUs from '../data/aboutUscard'
+import Footer from '../components/footer'
+import { FaPlay } from "react-icons/fa";
+import Video from '../components/video';
 
 const Aboutus:React.FC = () => {
+    const [open,setOpen]=useState(false);
+
+    const openVideo=()=>{
+      setOpen(!open)
+    }
+
   return (
     <div className='about-us'>  
       <Nav/>
@@ -14,18 +23,19 @@ const Aboutus:React.FC = () => {
         <h1><span style={{color:"#253b70"}}>Our Core</span> <span style={{color:'tomato'}}> Values</span></h1>
         <p>At Oxford Juniors's, we always put the quality of teaching and caring for children first, so please rest assured when choosing our kindergarten.</p>
       </div>
-      <div className="about-us-cards">
+    
           <div className="cards-here">
             {
               AboutUs.map((about,idx)=>{
          return <div className='card'key={idx}>
                   <img className='about-card-img' src={about.img} alt=""/>
+                  <div className="about-card-bg" style={{backgroundColor:about.bColor,color:'#fff'}}>
                   <h2>{about.text}</h2>
-                  <p>{about.content}</p>
+                  <p style={{color:'#fff'}}>{about.content}</p>
+                  </div>
                 </div>
               })
             }
-          </div>
         </div>
       <div className="welcome-about">
         <div className="welcome-photo">
@@ -75,6 +85,52 @@ const Aboutus:React.FC = () => {
         </div>
         </div>
       </div>
+
+      <div className="games">
+        <div className="game1">
+            <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087cc4cfbf5e0002176bee2" alt="" />
+            <h2>Art Classes</h2>
+            <p>We will reveal your child's talents in time in our art classes</p>
+        </div>
+        <div className="game2">
+        <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fabcf12300218a6913" alt="" />
+            <h2>Sport Activities</h2>
+            <p>We have children's gymnastics, swimming, tennis, etc.</p>
+        </div>
+        <div className="game3">
+        <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fa73610400224f5dd8" alt="" />
+            <h2>Mind Games</h2>
+            <p>Games that develop the logical thinking of your kid.</p>
+        </div>
+        <div className="game4">
+        <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fac2ca7d0021aee050" alt="" />
+            <h2>Table/Floor Toys</h2>
+            <p>We have all your child's favorite toys! They are all completely safe.</p>
+        </div>
+      </div>
+
+      <div className="join-section">
+        <div className="join-text">
+          <h1>Join us!</h1>
+        </div>
+          <div className="join-para">
+            <p>"Come join our little world of wonders, where giggles turn into learning, and every day is an adventure! Together, let's nurture the joy of discovery. Join us on this colorful journey through the magic of kindergarten!"</p>
+          </div>
+          <div className="join-video">
+            <div className="video" onClick={openVideo}>
+              <div>
+              <FaPlay size={25}/>
+              </div>
+              <h3>Watch Video</h3>
+            </div>
+          </div>
+      </div>
+      <div>
+        {
+          open && (<Video/>)
+        }
+      </div>
+      <Footer/>
     </div>
   )
 }
