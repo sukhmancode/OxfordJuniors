@@ -57,7 +57,11 @@ const Footer :React.FC= () => {
               <img src="https://themewagon.github.io/kider/img/classes-3.jpg" alt="" />
               <img src="https://themewagon.github.io/kider/img/classes-4.jpg" alt="" />
               <img src="https://themewagon.github.io/kider/img/classes-5.jpg" alt="" />
-              <img src="https://themewagon.github.io/kider/img/classes-6.jpg" alt="" />
+              <Link to={'/gallery'}>
+              <div className="more-box">
+                <h3>More</h3>
+              </div>
+              </Link>
             </div>
         </div>
 

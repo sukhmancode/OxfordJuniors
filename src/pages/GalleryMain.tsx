@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Nav from '../components/nav'
 import GalleryData from '../data/galleryData'
 import { GrPrevious , GrNext} from "react-icons/gr";
 import { FaRegWindowClose } from "react-icons/fa";
 import Footer from '../components/footer';
 const GalleryMain :React.FC= () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [Slidenum,setSlidenum]=useState(1);
   const [openView,setOpenView]=useState(false)
 
@@ -31,9 +34,14 @@ const GalleryMain :React.FC= () => {
           {
             openView && 
             <div className='slider-wrap'>
-              <GrPrevious onClick={handlePrev} className='btn-prev'/>
-              <GrNext onClick={handleNext} className='btn-next'/>
-              <FaRegWindowClose className='btn-close' onClick={handleBack}/>
+              <GrPrevious
+               onClick={handlePrev} 
+               className='btn-prev'
+               size={60}/>
+              <GrNext onClick={handleNext} className='btn-next'
+              size={60}/>
+              <FaRegWindowClose className='btn-close' onClick={handleBack}
+               size={70}/>
               <div className="fullscreen-img">
                 <img src={GalleryData[Slidenum].img} alt="" />
               </div>

@@ -2,16 +2,10 @@ import React, { useState } from 'react'
 import Nav from '../components/nav'
 import AboutUs from '../data/aboutUscard'
 import Footer from '../components/footer'
-import { FaPlay } from "react-icons/fa";
-import Video from '../components/video';
+import Video from '../components/video'
+
 
 const Aboutus:React.FC = () => {
-    const [open,setOpen]=useState(false);
-
-    const openVideo=()=>{
-      setOpen(!open)
-    }
-
   return (
     <div className='about-us'>  
       <Nav/>
@@ -39,7 +33,7 @@ const Aboutus:React.FC = () => {
         </div>
       <div className="welcome-about">
         <div className="welcome-photo">
-          <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087dcd8c2ca7d0021b08266_optimized_1396_c1396x930-0x0.webp" alt="" />
+          <Video/>
         </div>
         
         <div className="welcome-content">
@@ -107,28 +101,6 @@ const Aboutus:React.FC = () => {
             <h2>Table/Floor Toys</h2>
             <p>We have all your child's favorite toys! They are all completely safe.</p>
         </div>
-      </div>
-
-      <div className="join-section">
-        <div className="join-text">
-          <h1>Join us!</h1>
-        </div>
-          <div className="join-para">
-            <p>"Come join our little world of wonders, where giggles turn into learning, and every day is an adventure! Together, let's nurture the joy of discovery. Join us on this colorful journey through the magic of kindergarten!"</p>
-          </div>
-          <div className="join-video">
-            <div className="video" onClick={openVideo}>
-              <div>
-              <FaPlay size={25}/>
-              </div>
-              <h3>Watch Video</h3>
-            </div>
-          </div>
-      </div>
-      <div>
-        {
-          open && (<Video/>)
-        }
       </div>
       <Footer/>
     </div>

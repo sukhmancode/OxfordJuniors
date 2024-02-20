@@ -1,8 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
+import Success1 from '../components/success'
 
 const Admission :React.FC= () => {
+  const [Success,setSuccess]=useState(false)
+
+  const openSuccess=()=>{
+    setSuccess(!Success);
+  }
+  const submitForm=(e:any)=>{
+    e.preventDefault();
+  }
   return (
     <div className='admission'>
         <Nav/>
@@ -43,14 +52,18 @@ const Admission :React.FC= () => {
             <h1><span style={{color:"#253b70"}}>Make</span> <span style={{color:"tomato"}}>Appointment</span></h1>
           </div>
           <div className="form-admission">
-            <form>
+            <form onSubmit={(e)=>submitForm(e)}>
                 <input type="text" name="" id="" placeholder='Guardian Name' />
                 <input type="text" name="" id="" placeholder='Guardian Email' />
                 <input type="text" name="" id="" placeholder='Child Name' />
                 <input type="text" name="" id="" placeholder='Child Age' />
                 <input type="number" name="" id="" placeholder='phone' />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"
+                onClick={openSuccess} />
             </form>
+            {
+              Success ? <Success1/> :""
+            }
           </div>
         </div>
         <Footer/>
