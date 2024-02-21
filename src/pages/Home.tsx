@@ -2,17 +2,11 @@ import React, { useEffect } from 'react'
 import Nav from '../components/nav'
 import { Link } from 'react-router-dom'
 import Footer from '../components/footer'
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Home:React.FC = () => {
-  useEffect(() => {
-    AOS.init({
-      disable: "phone",
-      duration: 1800,
-      easing: "ease-out-cubic",
-    });
-  }, []);
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className='home'>
         <Nav/>
@@ -42,10 +36,10 @@ const Home:React.FC = () => {
        </div>
 
        <section className='features-section'>
-          <div className="heading">
+          <div className="heading" data-aos="fade-down">
          <p>We Are <span className='tomato'>Oxford</span> Junior's And Childhood Is Our <span className='tomato'>Passion</span>.</p>
           </div>
-          <div className="feature-para">
+          <div className="feature-para" data-aos="fade-right">
             <p>We are excited and pleased to introduce you to the wonderful, passionate and committed educators who are working at <b>Oxford Juniors,kapurthala.</b> Please take a moment to meet “Our Family!” We invited each of them to describe why they love working with children.</p>
           </div>
 
@@ -83,12 +77,12 @@ const Home:React.FC = () => {
             </div>
           </div>
 
-          <div className="learn-more-btn">
+          <div className="learn-more-btn" data-aos="zoom-in">
             <button>Learn More</button>
            </div>
        </section>
 
-       <section className="oppurtunity-section">
+       <section className="oppurtunity-section" data-aos="zoom-in">
           <div className="oppurtunity-heading">
             <p>We Provide Your Child <span className='opp-head'>With An Opportunity</span></p>
           </div>
@@ -159,10 +153,10 @@ const Home:React.FC = () => {
        </section>
 
        <section className='look-around-section'>
-        <div className="look-around-img">
+        <div className="look-around-img" data-aos="fade-right">
           <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63316f6e540a10031a2d0c6e_8969101_smartphone_childhood_toys_kids_icon%201.webp" alt="" />
         </div>
-        <div className="look-around-para">
+        <div className="look-around-para" data-aos="fade-left">
           <h2>Come Over And <span style={{color:"#253b70"}}>Look Around</span></h2>
           <p>We will explain everything you are interested. Join our new session. If you have any questions or enquiries please feel free to contact us on the following details provided below or alternatively you can complete our online enquiry form also located below and we will get back to you as soon as possible…</p>
 

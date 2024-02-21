@@ -12,6 +12,7 @@ const Aboutus:React.FC = () => {
       <div className="about-photo">
         <h1><span >About</span> <span style={{color:"#253b70"}}>us</span></h1>
         <p>Where Tiny Minds Blossom: Nurturing Curiosity, Inspiring Creativity, and Building Futures at <b>Oxford Junior's</b></p>
+      
       </div>
       <div className="values-content">
         <h1><span style={{color:"#253b70"}}>Our Core</span> <span style={{color:'tomato'}}> Values</span></h1>
@@ -21,7 +22,7 @@ const Aboutus:React.FC = () => {
           <div className="cards-here">
             {
               AboutUs.map((about,idx)=>{
-         return <div className='card'key={idx}>
+         return <div className='card'key={idx} data-aos="fade-right">
                   <img className='about-card-img' src={about.img} alt=""/>
                   <div className="about-card-bg" style={{backgroundColor:about.bColor,color:'#fff'}}>
                   <h2>{about.text}</h2>
@@ -32,7 +33,7 @@ const Aboutus:React.FC = () => {
             }
         </div>
       <div className="welcome-about">
-        <div className="welcome-photo">
+        <div className="welcome-photo" data-aos="fade-right">
           <Video/>
         </div>
         

@@ -7,10 +7,11 @@ const Admission :React.FC= () => {
   const [Success,setSuccess]=useState(false)
 
   const openSuccess=()=>{
-    setSuccess(!Success);
+     setSuccess(!Success);
   }
   const submitForm=(e:any)=>{
     e.preventDefault();
+  
   }
   return (
     <div className='admission'>
@@ -48,7 +49,7 @@ const Admission :React.FC= () => {
           </div>
         </div>
         <div className="make-appointment">
-          <div className="form-heading">
+          <div className="form-heading1">
             <h1><span style={{color:"#253b70"}}>Make</span> <span style={{color:"tomato"}}>Appointment</span></h1>
           </div>
           <div className="form-admission">
@@ -62,7 +63,7 @@ const Admission :React.FC= () => {
                 onClick={openSuccess} />
             </form>
             {
-              Success ? <Success1/> :""
+              Success ? <Success1/> :null
             }
           </div>
         </div>

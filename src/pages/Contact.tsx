@@ -3,7 +3,6 @@ import Nav from '../components/nav';
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaWpforms } from "react-icons/fa";
-import Footer from '../components/footer';
 
 const Contact: React.FC = () => {
   return (

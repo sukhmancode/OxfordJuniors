@@ -5,7 +5,8 @@ const Success1 :React.FC= () => {
     <div className='success-compo'>
         <img src="monkey.png" alt="" />
         <h1>Thanks!</h1>
-        <p>We've recieved your message and will respond witin 24 hours</p>
+        <p>We've recieved your message </p>
+        <p>and will respond witin 24 hours</p>
     </div>
   )
 }

@@ -4,6 +4,12 @@ import GalleryData from '../data/galleryData'
 import { GrPrevious , GrNext} from "react-icons/gr";
 import { FaRegWindowClose } from "react-icons/fa";
 import Footer from '../components/footer';
+import LightGallery from 'lightgallery/react';
+// Pluginsimport 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 const GalleryMain :React.FC= () => {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -52,6 +58,7 @@ const GalleryMain :React.FC= () => {
       
         <div className="images">
             {
+              
                GalleryData.map((gall,index)=>(
                 <div className='image' key={gall.id}
                 onClick={()=>handleView(index)}>
