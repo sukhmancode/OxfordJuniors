@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 const App :React.FC=()=>{
   useEffect(() => {
     AOS.init({
-      disable: "phone",
+      disable: "mobile",
       duration: 1000,
       easing: "ease-out-cubic",
     });

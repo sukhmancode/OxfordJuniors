@@ -4,12 +4,21 @@ import GalleryData from '../data/galleryData'
 import { GrPrevious , GrNext} from "react-icons/gr";
 import { FaRegWindowClose } from "react-icons/fa";
 import Footer from '../components/footer';
+
 import LightGallery from 'lightgallery/react';
-// Pluginsimport 'lightgallery/css/lightgallery.css';
+
+// import styles
+import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
+
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
+import lgRotate from 'lightgallery/plugins/rotate';
+import lgShare from 'lightgallery/plugins/share'
+import lgVideo from 'lightgallery/plugins/video'
+import lgAutoplay from 'lightgallery/plugins/autoplay'
+
 const GalleryMain :React.FC= () => {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -36,6 +45,7 @@ const GalleryMain :React.FC= () => {
 
         <div className="gallery-heading">
            <h1><span className='gallery-our'>Our</span> <span className='gallery-gallery'>Gallery</span></h1>
+           
            <div>
           {
             openView && 
@@ -67,6 +77,39 @@ const GalleryMain :React.FC= () => {
                ))
             } 
         </div>
+        <LightGallery
+                speed={500}
+                plugins={[lgThumbnail, lgZoom,lgRotate,lgVideo,lgAutoplay]}
+            > 
+              <div className="images">
+            <div className="image">
+                <a href="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp">
+                    <img alt="img1" src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp" />
+                </a>
+                </div>
+                <div className="image">
+                <a href="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp">
+                    <img alt="img1" src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp" />
+                </a>
+                </div>
+                <div className="image">
+                <a href="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp">
+                    <img alt="img1" src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp" />
+                </a>
+                </div>
+
+                <div className="image">
+                <a href="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp">
+                    <img alt="img1" src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp" />
+                </a>
+                </div>
+                <div className="image">
+                <a href="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp">
+                    <img alt="img1" src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp" />
+                </a>
+                </div>
+                </div>
+            </LightGallery>
         <Footer/>
     </div>
   )

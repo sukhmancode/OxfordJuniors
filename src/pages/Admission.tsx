@@ -4,15 +4,101 @@ import Footer from '../components/footer'
 import Success1 from '../components/success'
 
 const Admission :React.FC= () => {
-  const [Success,setSuccess]=useState(false)
-
-  const openSuccess=()=>{
-     setSuccess(!Success);
+  interface FormData {
+    gName: string;
+    gMail: string;
+    cName: string;
+    cAge: number;
+    phone: string;
+  };
+  interface FormErrors {
+    gName?: string;
+    gMail?: string;
+    cName?: string;
+    cAge?: string;
+    phone?: string;
   }
+  
+  const [Success,setSuccess]=useState(false)
+  const [formData,setFormData]=useState<FormData>({
+    gName:"",
+    gMail:"",
+    cName:"",
+    cAge:0,
+    phone:""
+  })
+
+
+  const [errors, setErrors] = useState<FormErrors>({});
+
+
+  const isValidEmail=(gMail:any)=>{
+    const emailRegex = /^\S+@\S+$/;
+    return emailRegex.test(gMail)
+  }
+  const validPhone=(phone:any)=>{
+    const phoneRegex=/^\d{10}$/;
+    return phoneRegex.test(phone)
+  }
+  const validateForm = (): boolean => {
+    let newErrors: FormErrors = {};
+  
+    if (!formData.gName.trim()) {
+      newErrors.gName = "Guardian Name is required";
+    }
+  
+    if (!formData.gMail.trim()) {
+      newErrors.gMail = "Email is required";
+    } else if (!isValidEmail(formData.gMail.trim())) {
+      newErrors.gMail = "Invalid email format";
+    }
+  
+    if (!formData.cName.trim()) {
+      newErrors.cName = "Child name is required";
+    }
+  
+    if (!formData.cAge) {
+      newErrors.cAge = "Child Age is required";
+    } else if (isNaN(Number(formData.cAge))) {
+      newErrors.cAge = "Child Age must be a number";
+    }
+  
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!validPhone(formData.phone.trim())) {
+      newErrors.phone = "Invalid phone number";
+    }
+  
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  console.log(errors);
+  
+
   const submitForm=(e:any)=>{
     e.preventDefault();
-  
+
+    setTimeout(()=>{
+      setSuccess(false)
+    },1500)
+    const isValid=validateForm()
+    if(isValid){
+      console.log("form submitted",formData);
+      setSuccess(true)
+    }else{
+      console.log("form validation failed");
+      setSuccess(false)
+    }
   }
+  const handleChange=(e:any)=>{
+    const {name,value}=e.target;
+
+    setFormData({
+      ...formData,
+      [name]:value
+    })
+  }
+ 
   return (
     <div className='admission'>
         <Nav/>
@@ -54,13 +140,59 @@ const Admission :React.FC= () => {
           </div>
           <div className="form-admission">
             <form onSubmit={(e)=>submitForm(e)}>
-                <input type="text" name="" id="" placeholder='Guardian Name' />
-                <input type="text" name="" id="" placeholder='Guardian Email' />
-                <input type="text" name="" id="" placeholder='Child Name' />
-                <input type="text" name="" id="" placeholder='Child Age' />
-                <input type="number" name="" id="" placeholder='phone' />
-                <input type="submit" value="Submit"
-                onClick={openSuccess} />
+              <div>
+                <input type="text" 
+                name="gName" 
+                placeholder='Guardian Name'
+                value={formData.gName} 
+                onChange={handleChange}/>
+                
+                {errors.gName &&<div className='form-error'>{errors.gName}</div>}
+                </div>
+                <div>
+                <input type="text"
+                 name="gMail" 
+                 id="" 
+                 placeholder='Guardian Email'
+                 value={formData.gMail}
+                onChange={handleChange}/>
+              
+              {errors.gMail &&<div className='form-error'>{errors.gMail}</div>}
+              </div>
+                <div>
+                <input type="text"
+                 name="cName"
+                 id=""
+                 placeholder='Child Name'
+                 value={formData.cName}
+                onChange={handleChange}/>
+                
+              {errors.cName &&<div className='form-error'>{errors.cName}</div>}
+              </div>
+
+                  <div>
+                <input type="text" 
+                name="cAge"
+                id="" 
+                placeholder='Child Age'
+                value={formData.cAge}
+                onChange={handleChange}/>
+                
+              {errors.cAge &&<div className='form-error'>{errors.cAge}</div>}
+              </div>
+
+                 <div>
+                <input type="number"
+                 name="phone"
+                 id=""
+                 placeholder='phone'
+                 value={formData.phone}
+                onChange={handleChange}/>
+
+              {errors.phone &&<div className='form-error'>{errors.phone}</div>}
+             </div>
+
+                <input type="submit" value="Submit" />
             </form>
             {
               Success ? <Success1/> :null

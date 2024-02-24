@@ -13,7 +13,7 @@ const Nav :React.FC=()=>{
         setOpenMenu(!openMenu)
     }
     return( 
-        <div className={openMenu ? "nav active":"nav"} data-aos="fade-down" >
+        <div className={openMenu ? "nav active":"nav"}  >
             <div className="oxford-logo">
                 <img src="https://www.edustoke.com/assets/uploads-new/oxford-juniors-1504671925-1.png"/>
             </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Success1 :React.FC= () => {
   return (
-    <div className='success-compo'>
+    <div className='success-compo'  data-aos="fade-up">
         <img src="monkey.png" alt="" />
         <h1>Thanks!</h1>
         <p>We've recieved your message </p>

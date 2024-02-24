@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Nav from '../components/nav'
 import AboutUs from '../data/aboutUscard'
 import Footer from '../components/footer'
@@ -37,7 +37,7 @@ const Aboutus:React.FC = () => {
           <Video/>
         </div>
         
-        <div className="welcome-content">
+        <div className="welcome-content" data-aos="fade-left">
           <h1>Welcome to the Oxford Junior's <span style={{color:'tomato'}}>Playway</span></h1>
           <div className="welcome-p">
             <p>Is each morning a torment for your and your children? Don't they like going to kindergarten? Everything will be different with Kidtime!</p>
@@ -81,7 +81,7 @@ const Aboutus:React.FC = () => {
         </div>
       </div>
 
-      <div className="games">
+      <div className="games" data-aos="zoom-out">
         <div className="game1">
             <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087cc4cfbf5e0002176bee2" alt="" />
             <h2>Art Classes</h2>
