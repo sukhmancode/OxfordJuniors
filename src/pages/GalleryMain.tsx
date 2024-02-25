@@ -15,7 +15,6 @@ import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgRotate from 'lightgallery/plugins/rotate';
-import lgShare from 'lightgallery/plugins/share'
 import lgVideo from 'lightgallery/plugins/video'
 import lgAutoplay from 'lightgallery/plugins/autoplay'
 

@@ -2,71 +2,75 @@ import React,{useState} from 'react'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Success1 from '../components/success'
-
+import supabase from '../config/supaClient'
+import toast from 'react-hot-toast'
 const Admission :React.FC= () => {
   interface FormData {
-    gName: string;
-    gMail: string;
-    cName: string;
-    cAge: number;
-    phone: string;
+    Guardian_Name: string;
+    Guardian_email: string;
+    Child_name: string;
+    Child_age: string;
+    Phone: string;
   };
+  console.log(supabase);
+  
   interface FormErrors {
-    gName?: string;
-    gMail?: string;
-    cName?: string;
-    cAge?: string;
-    phone?: string;
+    Guardian_Name?: string;
+    Guardian_email?: string;
+    Child_name?: string;
+    Child_age?: string;
+    Phone?: string;
   }
   
   const [Success,setSuccess]=useState(false)
   const [formData,setFormData]=useState<FormData>({
-    gName:"",
-    gMail:"",
-    cName:"",
-    cAge:0,
-    phone:""
+    Guardian_Name:"",
+    Guardian_email:"",
+    Child_name:"",
+    Child_age:"",
+    Phone:""
   })
+
 
 
   const [errors, setErrors] = useState<FormErrors>({});
 
 
-  const isValidEmail=(gMail:any)=>{
+  const isValidEmail=(Guardian_email:any)=>{
     const emailRegex = /^\S+@\S+$/;
-    return emailRegex.test(gMail)
+    return emailRegex.test(Guardian_email)
   }
-  const validPhone=(phone:any)=>{
+  const validPhone=(Phone:any)=>{
     const phoneRegex=/^\d{10}$/;
-    return phoneRegex.test(phone)
+    return phoneRegex.test(Phone)
   }
   const validateForm = (): boolean => {
     let newErrors: FormErrors = {};
   
-    if (!formData.gName.trim()) {
-      newErrors.gName = "Guardian Name is required";
+    if (!formData.Guardian_Name.trim()) {
+      newErrors.Guardian_Name = "Guardian Name is required";
     }
   
-    if (!formData.gMail.trim()) {
-      newErrors.gMail = "Email is required";
-    } else if (!isValidEmail(formData.gMail.trim())) {
-      newErrors.gMail = "Invalid email format";
+    if (!formData.Guardian_email.trim()) {
+      newErrors.Guardian_email = "Email is required";
+    } else if (!isValidEmail(formData.Guardian_email.trim())) {
+      newErrors.Guardian_email = "Invalid email format";
     }
   
-    if (!formData.cName.trim()) {
-      newErrors.cName = "Child name is required";
+    if (!formData.Child_name.trim()) {
+      newErrors.Child_name = "Child name is required";
     }
   
-    if (!formData.cAge) {
-      newErrors.cAge = "Child Age is required";
-    } else if (isNaN(Number(formData.cAge))) {
-      newErrors.cAge = "Child Age must be a number";
+    if (!formData.Child_age) {
+      newErrors.Child_age = "Child Age is required";
+    } else if (isNaN(Number(formData.Child_age))) {
+      newErrors.Child_age = "Child Age must be a number";
     }
   
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!validPhone(formData.phone.trim())) {
-      newErrors.phone = "Invalid phone number";
+    if (!formData.Phone.trim()) {
+      newErrors.Phone = "Phone number is required";
+    } else if (!validPhone(formData.Phone.trim())) {
+      newErrors.Phone = "Invalid Phone number";
     }
   
     setErrors(newErrors);
@@ -75,7 +79,7 @@ const Admission :React.FC= () => {
   console.log(errors);
   
 
-  const submitForm=(e:any)=>{
+  const submitForm= async(e:any)=>{
     e.preventDefault();
 
     setTimeout(()=>{
@@ -85,10 +89,27 @@ const Admission :React.FC= () => {
     if(isValid){
       console.log("form submitted",formData);
       setSuccess(true)
+
+      /*SUPABASE STARTS*/
+      const {data,error} =await supabase
+      .from('orders')
+      .insert([formData])
+  
+      if(error){
+        toast.error('Something went wrong')
+        console.log(error)
+      }
+      if(data){
+        console.log(data)
+        toast.success('Form successfully submitted')
+      }
+      /*Supabase ends*/
+      
     }else{
       console.log("form validation failed");
       setSuccess(false)
     }
+ 
   }
   const handleChange=(e:any)=>{
     const {name,value}=e.target;
@@ -139,57 +160,63 @@ const Admission :React.FC= () => {
             <h1><span style={{color:"#253b70"}}>Make</span> <span style={{color:"tomato"}}>Appointment</span></h1>
           </div>
           <div className="form-admission">
-            <form onSubmit={(e)=>submitForm(e)}>
+
+            <form onSubmit={submitForm} >
               <div>
                 <input type="text" 
-                name="gName" 
+                name='Guardian_Name'
                 placeholder='Guardian Name'
-                value={formData.gName} 
-                onChange={handleChange}/>
+                value={formData.Guardian_Name} 
+                onChange={handleChange}
+
+                />
                 
-                {errors.gName &&<div className='form-error'>{errors.gName}</div>}
+                {errors.Guardian_Name &&<div className='form-error'>{errors.Guardian_Name}</div>}
                 </div>
                 <div>
                 <input type="text"
-                 name="gMail" 
+                name="Guardian_email" 
                  id="" 
                  placeholder='Guardian Email'
-                 value={formData.gMail}
+                 value={formData.Guardian_email}
                 onChange={handleChange}/>
               
-              {errors.gMail &&<div className='form-error'>{errors.gMail}</div>}
+              {errors.Guardian_email &&<div className='form-error'>{errors.Guardian_email}</div>}
               </div>
                 <div>
                 <input type="text"
-                 name="cName"
+
+                 name="Child_name"
                  id=""
                  placeholder='Child Name'
-                 value={formData.cName}
+                 value={formData.Child_name}
                 onChange={handleChange}/>
                 
-              {errors.cName &&<div className='form-error'>{errors.cName}</div>}
+              {errors.Child_name &&<div className='form-error'>{errors.Child_name}</div>}
               </div>
 
                   <div>
-                <input type="text" 
-                name="cAge"
+                <input type="number" 
+
+                name="Child_age"
                 id="" 
                 placeholder='Child Age'
-                value={formData.cAge}
+                value={formData.Child_age}
                 onChange={handleChange}/>
                 
-              {errors.cAge &&<div className='form-error'>{errors.cAge}</div>}
+              {errors.Child_age &&<div className='form-error'>{errors.Child_age}</div>}
               </div>
 
                  <div>
                 <input type="number"
-                 name="phone"
+
+                 name="Phone"
                  id=""
-                 placeholder='phone'
-                 value={formData.phone}
+                 placeholder='Phone'
+                 value={formData.Phone}
                 onChange={handleChange}/>
 
-              {errors.phone &&<div className='form-error'>{errors.phone}</div>}
+              {errors.Phone &&<div className='form-error'>{errors.Phone}</div>}
              </div>
 
                 <input type="submit" value="Submit" />

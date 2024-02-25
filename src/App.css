@@ -386,18 +386,18 @@ color: var(--tomato-color);
 .form-admission input[type="text"]{
     border: 1px solid #ccc;
     border-radius: 3.6rem;
-    width: 100%;
+    width: 500px;
 
 }.form-admission input[type="email"]{
     border: 1px solid #ccc;
     border-radius: 3.6rem;
 
-    width: 100%;
+    width: 500px;
 }
 .form-admission input[type="number"]{
     border: 1px solid #ccc;
     border-radius: 3.6rem;
-    width: 100%;
+    width: 500px;
     padding: 2rem;
 }
 .form-admission input[type="submit"]{
