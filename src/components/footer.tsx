@@ -39,8 +39,9 @@ const Footer :React.FC= () => {
         </div>
 
         <div className="address-section">
-            <h2>Quick Links</h2>
             <div className="address-area">
+            <h2>Quick Links</h2>
+
               <div>&gt;<Link to={'/about'}><p>About Us</p></Link></div>
               <div>&gt;<Link to={'/contact'}><p>Contact Us</p></Link></div>
               <div>&gt;<p>Our Services</p></div>

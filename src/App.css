@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
 *{
     margin:0;
     padding:0;
@@ -10,6 +10,58 @@
 html{
     font-size: 62.5%;
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #253b70;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #253b70;
+  }
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+  }
+  .loader::before , .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+  }
+  .loader::after{
+    border-color: #FF3D00;
+    animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
+    inset: 6px;
+  }
+
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  }
 :root{
     --roboto:'Roboto', sans-serif;
     --poppins:'Poppins', sans-serif;
@@ -495,11 +547,11 @@ color: var(--tomato-color);
 }
 .images{
     margin-block: 6rem;
-  display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 .image img{
     width: 400px;
@@ -791,6 +843,34 @@ gap: 2rem;
     color: #253b70;
     font-weight: 500;
 }
+/*EVENTS*/
+.event{
+    overflow-y:hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+ 
+}
+.notice-board img{
+    left: 0;
+    top: -120px;
+    position: absolute;
+    z-index: -1111111;
+}
+.news-data{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    gap: 5rem;
+    z-index: 1111111;
+}
+.news-content{
+    background-color: var(--white-color);
+    padding: 2rem;
+    width: 500px
+}
+
 @media screen and (max-width:1224px) {
     .banner{
         align-items: center;
@@ -915,8 +995,33 @@ text-align: center;
 .kid-img-main{
     width: 320px;
 }
+.form-admission input[type="text"]{
+    border: 1px solid #ccc;
+    border-radius: 3.6rem;
+    width: 450px;
+
+}.form-admission input[type="email"]{
+    border: 1px solid #ccc;
+    border-radius: 3.6rem;
+
+    width: 450px;
+}
+.form-admission input[type="number"]{
+    border: 1px solid #ccc;
+    border-radius: 3.6rem;
+    width: 450px;
+    padding: 2rem;
+}
+.look-around-para{
+    width: 100%;
+}
+.look-around-para h2{
+    font-size: 3rem;
+}
+
   }
 @media screen and (max-width:400px) {
+  
     html{
         font-size: 45%;
     }
@@ -927,6 +1032,31 @@ text-align: center;
         width: 100%;
         padding: 5rem;
     }
+    .nav-elements span{
+        font-size: 1.8rem;
+    }
+    .form-admission input[type="text"]{
+        border: 1px solid #ccc;
+        border-radius: 3.6rem;
+        width: 320px;
     
+    }.form-admission input[type="email"]{
+        border: 1px solid #ccc;
+        border-radius: 3.6rem;
+    
+        width: 320px;
+    }
+    .form-admission input[type="number"]{
+        border: 1px solid #ccc;
+        border-radius: 3.6rem;
+        width: 320px;
+        padding: 2rem;
+    }
+    .form-heading1 h1{
+        text-align: center;
+    }
+    .appoint-head h1{
+        font-size: 3rem;
+    }
 }
   

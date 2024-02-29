@@ -3,8 +3,12 @@ import Nav from '../components/nav';
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaWpforms } from "react-icons/fa";
+import { BsInstagram } from 'react-icons/bs';
+import { FiFacebook } from 'react-icons/fi';
+import { ImWhatsapp } from 'react-icons/im';
 
 const Contact: React.FC = () => {
+  const currentYear: number = new Date().getFullYear();
   return (
     <div className='contact'>
       <Nav />
@@ -75,6 +79,16 @@ const Contact: React.FC = () => {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+        </div>
+      </div>
+      <div className="contact-footer">
+        <div className="copy">
+          <p>&copy; {currentYear} by Oxford Juniors.All rights reserved</p>
+        </div>
+        <div className="contact-footer-social">
+          <p><BsInstagram/></p>
+          <p><FiFacebook/></p>
+          <p><ImWhatsapp/></p>
         </div>
       </div>
     </div>

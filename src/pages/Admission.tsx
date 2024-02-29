@@ -3,7 +3,7 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Success1 from '../components/success'
 import supabase from '../config/supaClient'
-import toast from 'react-hot-toast'
+import {toast} from 'react-hot-toast'
 const Admission :React.FC= () => {
   interface FormData {
     Guardian_Name: string;
@@ -89,6 +89,7 @@ const Admission :React.FC= () => {
     if(isValid){
       console.log("form submitted",formData);
       setSuccess(true)
+      toast.success('Form successfully submitted')
 
       /*SUPABASE STARTS*/
       const {data,error} =await supabase
@@ -101,13 +102,13 @@ const Admission :React.FC= () => {
       }
       if(data){
         console.log(data)
-        toast.success('Form successfully submitted')
       }
       /*Supabase ends*/
-      
+
     }else{
       console.log("form validation failed");
       setSuccess(false)
+      toast.error('Please fill your details')
     }
  
   }
@@ -160,7 +161,6 @@ const Admission :React.FC= () => {
             <h1><span style={{color:"#253b70"}}>Make</span> <span style={{color:"tomato"}}>Appointment</span></h1>
           </div>
           <div className="form-admission">
-
             <form onSubmit={submitForm} >
               <div>
                 <input type="text" 
@@ -168,7 +168,6 @@ const Admission :React.FC= () => {
                 placeholder='Guardian Name'
                 value={formData.Guardian_Name} 
                 onChange={handleChange}
-
                 />
                 
                 {errors.Guardian_Name &&<div className='form-error'>{errors.Guardian_Name}</div>}
@@ -180,12 +179,10 @@ const Admission :React.FC= () => {
                  placeholder='Guardian Email'
                  value={formData.Guardian_email}
                 onChange={handleChange}/>
-              
               {errors.Guardian_email &&<div className='form-error'>{errors.Guardian_email}</div>}
               </div>
                 <div>
                 <input type="text"
-
                  name="Child_name"
                  id=""
                  placeholder='Child Name'

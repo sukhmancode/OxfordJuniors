@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
 *{
     margin:0;
     padding:0;
@@ -54,7 +55,10 @@ transform: translateY(-0.6rem);
 
 }
 .nav-elements span{
+    font-weight: 700;
+    color: #253b70;
     position: relative;
+    font-family: "Wix Madefor Text", sans-serif;
 }
 
 .nav-elements span:before{
@@ -94,6 +98,32 @@ a{
 .contact{
     background-color:var(--white-color)
 }
+.contact-footer{
+    padding: 2rem;
+    background-color: #253b70;
+    padding-inline: 10%;
+    display: flex;
+    color: var(--white-color);
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-footer-social{
+    font-size: 2.5rem;
+    display: flex;
+    gap:2rem;
+    color: var(--white-color);
+}
+.contact-footer-social p{
+    cursor: pointer;
+
+}
+.contact-footer-social p:hover{
+    transition: all 0.2 ease;
+
+    color: var(--tomato-color);
+    transform: scale(1.2);
+}
+
 .cover-photo{
     background-repeat: no-repeat;
     background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('contact-cover.jpg');
@@ -266,6 +296,7 @@ input[type]
     display: flex;
     width: 50%;
 }
+
 .address-area{
     margin-block:2rem;
     color: var(--white-color);
@@ -355,6 +386,7 @@ input[type]
 .tomato{
     color:#253b70;
 }
+
 /*#95FF00*/
 
 @media screen and (max-width:768px) {
@@ -368,11 +400,10 @@ input[type]
     }
     .nav-elements{
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         position: absolute;
-        top:10%;
         left:0;
-        transform: translate(100%);
+        transform: translateX(-100%);
         display: flex;
         justify-content: center;
         align-content: center;
