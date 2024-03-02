@@ -21,12 +21,12 @@ html{
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #253b70;
+    background: var(--tomato-color);
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #253b70;
+    background: var(--tomato-color);
   }
   .loader {
     width: 48px;
@@ -81,7 +81,6 @@ button{
     justify-content: space-between;
 }
 .banner-text{
-    
     margin-top: 10rem;
     display: flex;
     flex-direction: column;
@@ -106,6 +105,7 @@ button{
     transform-style: preserve-3d;
 }
 .kid-img-main{
+    z-index: -11111111111;
     margin-block:7rem;
     width: 500px;
     border-radius: 12px;
@@ -149,8 +149,7 @@ button{
     padding: 1rem;
 }
 .gallery-dropdown-1{
-    top:0;
-    transform: translateY(2rem);
+    z-index: 11111111;
     position: absolute;
 }
 .ball-compo{
@@ -546,12 +545,17 @@ color: var(--tomato-color);
     gap:2rem;
 }
 .images{
-    margin-block: 6rem;
+    margin: 6rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    padding: 3rem;
+}
+.images a{
+
+    margin: 2rem;
 }
 .image img{
     width: 400px;
@@ -854,7 +858,7 @@ color: var(--tomato-color);
 }
 .notice-board img{
     left: 0;
-    top: -120px;
+    top: -100px;
     position: absolute;
     z-index: -1111111;
 }
@@ -862,15 +866,70 @@ color: var(--tomato-color);
     display: flex;
     flex-direction: column;
     margin-top: 8rem;
-    gap: 5rem;
     z-index: 1111111;
+    align-items: center;
 }
 .news-content{
+    border:1px solid #ccc;
     background-color: var(--white-color);
     padding: 2rem;
-    width: 500px
+    width: 75%;
+    text-align: center
 }
 
+.teacher-background{
+    padding-block: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background:linear-gradient(rgba(248, 58, 58, 0.2), rgba(197, 35, 35, 0.3)),
+    url('teachermain.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    color: var(--white-color);
+}
+.teacher-background h1{
+    font-family: var(--poppins);
+    font-size: 6rem;
+}
+.teacher-background p{
+    font-size: 1.8rem;
+}
+.teachers{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 6rem;
+}
+.teacher-heading{
+    color: var(--tomato-color);
+    font-size: 3.4rem;
+}
+.teacher{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+    text-align: center;
+
+}
+.teacher img{
+    border-radius: 12px;
+    width: 300px;
+    
+}
+.teacher-name{
+    text-align: center;
+    color: var(--tomato-color);
+}
+.teacher p{
+    font-weight: 500;
+    color: #253b70;
+}
 @media screen and (max-width:1224px) {
     .banner{
         align-items: center;
