@@ -34,8 +34,15 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ccc;
-    background-color: var(--white-color);
+    border-bottom: 1px solid var(--tomato-color);
+}
+.nav2{
+    padding: 0rem 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 .oxford-logo img{
     width: 100%;
@@ -54,7 +61,31 @@ transform: translateY(-0.6rem);
     transition: all 0.2s ease-in;
 
 }
+.nav-elements2{
+    transform: translateY(-0.6rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        display: flex;
+        gap: 3rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+    
+    }
+
+.nav-elements2 span{
+    color: var(--white-color);
+    font-weight: 700;
+    position: relative;
+    font-family: "Wix Madefor Text", sans-serif;
+}
+.head-small{
+    color: var(--tomato-color);
+}
 .nav-elements span{
+    color: var(--white-color);
     font-weight: 700;
     color: #253b70;
     position: relative;
@@ -82,7 +113,20 @@ transform: translateY(-0.6rem);
     color: #fff;
     transition: all 0.3s ease-in;
 }
+
 .join-us-btn button:hover{
+    background-color: rgba(255, 74, 71, 0.773);
+    cursor: pointer;
+}.join-us-btn1 button{
+    padding: 1.5rem;
+    font-weight: 700;
+    border-radius: 1.2rem;
+    background-color: #253b70;
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+
+.join-us-btn1 button:hover{
     background-color: rgba(255, 74, 71, 0.773);
     cursor: pointer;
 }
@@ -127,7 +171,7 @@ a{
 
 .cover-photo{
     background-repeat: no-repeat;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('contact-cover.jpg');
+  
     background-size: cover;
     padding: 13rem 4rem;   
     display: flex;
@@ -141,6 +185,8 @@ a{
 .cover-photo h1{
     font-size: 6rem;
     padding: 1rem;
+
+    
 }
 .join-us-txt{
     display: flex;

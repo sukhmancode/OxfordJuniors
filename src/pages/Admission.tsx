@@ -4,6 +4,7 @@ import Footer from '../components/footer'
 import Success1 from '../components/success'
 import supabase from '../config/supaClient'
 import {toast} from 'react-hot-toast'
+import Nav2 from '../components/nav2'
 const Admission :React.FC= () => {
   interface FormData {
     Guardian_Name: string;
@@ -123,10 +124,11 @@ const Admission :React.FC= () => {
  
   return (
     <div className='admission'>
-        <Nav/>
         <div className='admission-background'>
-            <h1>Admission</h1>
-            <p>We are gonna help you – Just read the information down below.</p>
+        <Nav2/>
+        <div className="admission-text">
+           
+            </div>
         </div>
 
         <div className="appoint-head">

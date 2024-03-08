@@ -20,11 +20,11 @@ const Teachers:React.FC = () => {
           <div className="teacher">
             {
               TeacherData.map((info,idx)=> (
-                <div key={idx}>
+              <div key={idx}>
                 <img src={info.img} alt="" />
                 <h2 className='teacher-name'>{info.name}</h2>
                 <p>{info.designation}</p>
-                </div>
+              </div>
               ))
             }
           </div>

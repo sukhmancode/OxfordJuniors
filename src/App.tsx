@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Admission from './pages/Admission'
 import Aboutus from './pages/Aboutus'
 import GalleryMain from './pages/GalleryMain'
-import { useEffect,useState } from 'react'
+import { useEffect} from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Event from './pages/Event'
@@ -20,7 +20,6 @@ const App :React.FC=()=>{
       easing: "ease-out-cubic",
     });
   }, []);
-  const [loading,setLoading]=useState(false)
   return(
   <div>
     <Routes>

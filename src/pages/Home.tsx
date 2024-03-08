@@ -12,7 +12,7 @@ const Home:React.FC = () => {
         <Nav/>
         <div  className="banner">
          <div className="banner-text" data-aos="fade-right">
-            <h1>"Nurturing young minds <span style={{color:'tomato'}}>with</span> Oxford's academic <span style={{textDecoration:"line-through"}}>excellence</span>".</h1>
+            <h1>"Nurturing young minds with Oxford's <small className='head-small'>academic <span style={{textDecoration:"line-through"}}>excellence</span>".</small></h1>
             <p>Dream is often a child’s first introduction to school. The learning library surplus of online resources help new learners transition into the scholastic world of ABCs and 123s.</p>
             <Link to={'/contact'}>
             <button>Book a Visit</button>
@@ -20,7 +20,7 @@ const Home:React.FC = () => {
          </div>
 
          <div className="kid-image" data-aos="fade-left">
-          <img className='kid-img-main' src="https://themewagon.github.io/kider/img/appointment.jpg" alt="" />
+          <img className='kid-img-main' src="kid-image.png" alt="" />
 {/*
           <div className='ball-compo'>
             <img src="ball.png" alt="" />
@@ -78,7 +78,9 @@ const Home:React.FC = () => {
           </div>
 
           <div className="learn-more-btn" data-aos="zoom-in">
+            <Link to={'/about'}>
             <button>Learn More</button>
+            </Link>
            </div>
        </section>
 
@@ -161,8 +163,12 @@ const Home:React.FC = () => {
           <p>We will explain everything you are interested. Join our new session. If you have any questions or enquiries please feel free to contact us on the following details provided below or alternatively you can complete our online enquiry form also located below and we will get back to you as soon as possible…</p>
 
           <div className="look-around-btns">
+            <Link to={'/admission'}>
             <button>Book A Visit</button>
+            </Link>
+            <Link to={'/contact'}>
             <button>Let's Get in Touch</button>
+            </Link>
           </div>
         </div>
        </section>

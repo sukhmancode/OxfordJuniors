@@ -16,10 +16,6 @@ const Contact: React.FC = () => {
         <h1>Contact us</h1>
         <p>Connecting Dreams, Building Relationships: Where Your Journey Begins with Us</p>
       </div>
-      <div className="join-us-txt">
-        <p>Get In Touch</p>
-        <p>We encourage parents and prospective families to schedule a visit. Come experience our vibrant learning environment firsthand. Please call ahead to schedule an appointment.</p>
-      </div>
 
       <div className="contact-icons">
         <div className="contact-location">

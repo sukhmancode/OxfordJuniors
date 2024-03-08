@@ -18,10 +18,10 @@ import 'lightgallery/scss/lg-zoom.scss';
 // import plugins if you need
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
-// import lgShare from 'lightgallery/plugins/share'
-// import lgRotate from 'lightgallery/plugins/rotate'
-// import lgVideo from 'lightgallery/plugins/video'
-// import lgAutoplay from 'lightgallery/plugins/autoplay'
+import lgShare from 'lightgallery/plugins/share'
+import lgRotate from 'lightgallery/plugins/rotate'
+import lgVideo from 'lightgallery/plugins/video'
+import lgAutoplay from 'lightgallery/plugins/autoplay'
 
 const GalleryMain :React.FC= () => {
   useEffect(() => {
@@ -41,7 +41,7 @@ const GalleryMain :React.FC= () => {
       <div className='images'>
         <LightGallery
             onInit={onInit}
-            speed={500}
+            speed={650}
             plugins={[lgThumbnail, lgZoom]}
         >
             <a className="image" href="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/6335846c5dfd6574c12e5031_image%20(19)-p-500.webp">

@@ -76,7 +76,7 @@ button{
     font-family: var(--poppins);
 }
 .banner{
-    padding-inline: 9rem;
+    padding-inline: 10rem;
     display: flex;
     justify-content: space-between;
 }
@@ -91,7 +91,7 @@ button{
     width: 70%;;
 }
 .banner-text h1{
-    width: 70%;
+    width: 60%;
     font-family: var(--poppins);
     font-size: 5rem;
     color: #253b70;
@@ -106,8 +106,8 @@ button{
 }
 .kid-img-main{
     z-index: -11111111111;
-    margin-block:7rem;
-    width: 500px;
+    margin-block:3rem;
+    width: 380px;
     border-radius: 12px;
 }
 .banner-text button{
@@ -122,8 +122,7 @@ button{
     transition: all 0.2s ease-in;
 }
 .banner-text button:hover{
-    color: var(--tomato-color);
-    background-color: transparent;
+    background-color: #253b70;
     border: 1px solid var(--tomato-color);
 }
 .gallery{
@@ -395,22 +394,28 @@ color: var(--tomato-color);
 
 /*admission*/
 .admission-background{
-    padding-block: 15rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    background-image:linear-gradient(rgba(248, 58, 58, 0.2), rgba(197, 35, 35, 0.3)),
-    url('admission-cover.webp');
+    background-image:linear-gradient(rgba(74, 2, 2, 0.2), rgba(27, 4, 4, 0.3)),
+    url('admissionBg1.png');
     background-repeat: no-repeat;
-    background-position:bottom;
+    background-position:center;
     background-origin: padding-box;
     background-clip: padding-box;
     color: var(--white-color);
     background-size: cover;
 }
+.admission-text{
+    display: flex;
+    flex-direction: column;
+    padding-block: 15rem;
+}
 .admission-background h1{
+    padding-block: 1rem;
+
     font-family: var(--poppins);
     font-size: 6rem;
 }
@@ -878,7 +883,7 @@ color: var(--tomato-color);
 }
 
 .teacher-background{
-    padding-block: 20rem;
+    padding-block: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;

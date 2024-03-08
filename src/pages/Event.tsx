@@ -6,7 +6,7 @@ const Event:React.FC = () => {
     title:string;
     description:string;
   }
-  const apiUrl = "https://newsapi.org/v2/everything?q=tesla";
+  const apiUrl = "https://newsapi.org/v2/everything?q=kindergarten";
   
   const fetchData = async () => {
     try {
@@ -31,7 +31,7 @@ const Event:React.FC = () => {
         </div>
         <div className='news-data'>
           {
-            newsData.slice(0,5).map((article,idx)=>(
+            newsData.slice(0,7).map((article,idx)=>(
               <div key={idx} className='news-content'>
               <h2>{article.title}</h2>
               <p>{article.description}</p>
