@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import Nav from '../components/nav';
+import Footer from '../components/footer';
 
 const Event:React.FC = () => {
   interface Article {
     author: string;
     title:string;
     description:string;
+    urlToImage:string
   }
   const apiUrl = "https://newsapi.org/v2/everything?q=kindergarten";
   
@@ -26,19 +29,22 @@ const Event:React.FC = () => {
   },[])
   return (
     <div className='event'>
-      <div className='notice-board'>
-        <img src="notice3.svg" alt="" />
-        </div>
+      <Nav></Nav>
+      <div className='event-heading'>
+      <h1><span className='gallery-our'>Our</span> <span className='gallery-gallery'>Events</span></h1>
+      </div>
         <div className='news-data'>
           {
             newsData.slice(0,7).map((article,idx)=>(
               <div key={idx} className='news-content'>
+                <img src={article.urlToImage} alt="" width={200}/>
               <h2>{article.title}</h2>
               <p>{article.description}</p>
               </div>
             ))
           }
         </div>
+        <Footer/>
     </div>
   )
 }

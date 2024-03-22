@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Success1 from '../components/success'
 import supabase from '../config/supaClient'

@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Event from './pages/Event'
 import Teachers from './pages/Teachers'
+import Admin from './pages/Admin'
 
 
 const App :React.FC=()=>{
@@ -30,6 +31,7 @@ const App :React.FC=()=>{
       <Route path='/gallery' element={<GalleryMain/>}></Route>
       <Route path='/events' element={<Event/>}></Route>
       <Route path='/teacher' element={<Teachers/>}></Route>
+      <Route path='/admin' element={<Admin/>}></Route>
     </Routes>
  
   </div>

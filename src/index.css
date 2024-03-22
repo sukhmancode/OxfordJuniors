@@ -310,6 +310,7 @@ input[type]
     transform: translateY(-1rem);
 }
 .footer{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -434,7 +435,13 @@ input[type]
     color:#253b70;
 }
 
+/*Admin Page*/
 /*#95FF00*/
+table,tr,td,th{
+    border-collapse: collapse;
+    padding: 2rem;
+    border: 1px solid #ccc;
+}
 
 @media screen and (max-width:768px) {
     .mobile-navbar-btn{

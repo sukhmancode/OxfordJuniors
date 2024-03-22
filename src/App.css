@@ -101,6 +101,8 @@ button{
 }
 .kid-image img{
     opacity: 1;
+    z-index: -1111111111;
+
     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
 }
@@ -126,7 +128,7 @@ button{
     border: 1px solid var(--tomato-color);
 }
 .gallery{
-   transform: translateY(3rem);
+   transform: translateY(7rem);
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
@@ -854,31 +856,36 @@ color: var(--tomato-color);
 }
 /*EVENTS*/
 .event{
-    overflow-y:hidden;
-    display: flex;
+   
     align-items: center;
     justify-content: center;
     position: relative;
  
 }
-.notice-board img{
-    left: 0;
-    top: -100px;
-    position: absolute;
-    z-index: -1111111;
+.event-heading{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 5rem;
 }
 .news-data{
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
-    margin-top: 8rem;
-    z-index: 1111111;
+    margin-top: 2rem;
+    justify-content: center;
     align-items: center;
 }
 .news-content{
     border:1px solid #ccc;
     background-color: var(--white-color);
     padding: 2rem;
-    width: 75%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 1rem;
+    margin: 1rem;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
     text-align: center
 }
 
@@ -934,6 +941,15 @@ color: var(--tomato-color);
 .teacher p{
     font-weight: 500;
     color: #253b70;
+}
+/*ADMIN*/
+.admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin img{
+    width: 300px;
 }
 @media screen and (max-width:1224px) {
     .banner{
