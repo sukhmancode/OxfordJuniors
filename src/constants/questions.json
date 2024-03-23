@@ -1,0 +1,51 @@
+[
+    {
+        "img":"https://media.proprofs.com/images/QM/user_images/2503852/Apple.jpg",
+        "questions":"What color is the apple?",
+        "answers":[
+            {"text":"Green","isCorrect":false},
+            {"text":"Red","isCorrect":true},
+            {"text":"Yellow","isCorrect":false},
+            {"text":"Black","isCorrect":false}
+        ]
+    },
+    {
+        "questions":"What color is the car?",
+        "img":"https://media.proprofs.com/images/QM/user_images/2503852/car.jpg",
+        "answers":[
+            {"text":"Blue","isCorrect":true},
+            {"text":"Red","isCorrect":false},
+            {"text":"Green","isCorrect":false},
+            {"text":"Black","isCorrect":false}
+        ]
+    },
+    {
+        "questions":"What color is the sign?",
+        "img":"https://media.proprofs.com/images/QM/user_images/2503852/sign%20(1).jpg",
+        "answers":[
+            {"text":"White","isCorrect":false},
+            {"text":"Yellow","isCorrect":true},
+            {"text":"Green","isCorrect":false},
+            {"text":"Red","isCorrect":false}
+        ]
+    },   {
+        "questions":"What color is the umbrella?",
+        "img":"https://media.proprofs.com/images/QM/user_images/2503852/umbrella%20(1).jpg",
+        "answers":[
+            {"text":"Red","isCorrect":false},
+            {"text":"Blue","isCorrect":true},
+            {"text":"Black","isCorrect":false},
+            {"text":"Orange","isCorrect":true}
+        ]
+    },  {
+        "questions":"What is the color of the leaves on the tree?",
+        "img":"https://media.proprofs.com/images/QM/user_images/2503852/tree.jpg",
+        "answers":[
+            {"text":"Pink","isCorrect":false},
+            {"text":"Blue","isCorrect":false},
+            {"text":"Green","isCorrect":true},
+            {"text":"Red","isCorrect":false}
+        ]
+    }
+    
+]
