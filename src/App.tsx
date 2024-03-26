@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 import Event from './pages/Event'
 import Teachers from './pages/Teachers'
 import Admin from './pages/Admin'
-import Quiz from './pages/Quiz'
+import JobApply from './pages/JobApply'
 
 
 const App :React.FC=()=>{
@@ -33,7 +33,7 @@ const App :React.FC=()=>{
       <Route path='/events' element={<Event/>}></Route>
       <Route path='/teacher' element={<Teachers/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>
-      <Route path='/quiz' element={<Quiz/>}></Route>
+      <Route path='/job' element={<JobApply/>}></Route>
     </Routes>
  
   </div>

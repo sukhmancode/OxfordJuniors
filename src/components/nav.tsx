@@ -55,10 +55,6 @@ const Nav: React.FC = () => {
         <Link to={'/contact'}>
           <span>Contact Us</span>
         </Link>
-        <Link to={'/quiz'}>
-          <span>Quiz</span>
-        </Link>
-        
         <Link to={'/admission'}>
           <div className="join-us-btn">
             <button>Enroll now</button>
