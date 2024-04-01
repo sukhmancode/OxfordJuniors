@@ -132,6 +132,7 @@ transform: translateY(-0.6rem);
     cursor: pointer;
 }
 .gallery-dropdown{
+    z-index: 1111111;
     display: flex;
     align-items: center;
     gap: 0.2rem;
@@ -235,7 +236,7 @@ a{
     background-color: #fff5f3;
     display: flex;
     flex-direction: column;
-    padding:0rem 5rem;
+    padding: 2rem 5rem;
     border-radius: 8px;
 }
 .form-heading{
@@ -277,13 +278,13 @@ form{
     flex-direction: column;
     gap: 2rem;
 }
-.form-area{
+.form-area {
     display: flex;
     justify-content: center;
     background-color: var(--white-color);
     margin-block: 5rem;   
 }
-input[type="submit"]{
+input[type="submit"] {
     border: none;
     outline: none;
     padding: 1.6rem;
@@ -296,7 +297,6 @@ input[type="submit"]{
     border-radius: 8px;
     cursor: pointer;
 }
-input[type]
 .fill-details-txt{
     font-family: var(--poppins);
     font-size: 4rem;

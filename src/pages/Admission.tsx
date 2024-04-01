@@ -1,33 +1,35 @@
 import React,{useState} from 'react'
 import Footer from '../components/footer'
 import Success1 from '../components/success'
-import supabase from '../config/supaClient'
 import {toast} from 'react-hot-toast'
 import Nav2 from '../components/nav2'
+import {useForm,SubmitHandler } from 'react-hook-form'
+
 const Admission :React.FC= () => {
   interface FormData {
-    Guardian_Name: string;
-    Guardian_email: string;
-    Child_name: string;
-    Child_age: string;
+    GuardianName: string;
+    GuardianEmail: string;
+    ChildName: string;
+    ChildAge: string;
     Phone: string;
-  };
-  console.log(supabase);
+  }
+  
   
   interface FormErrors {
-    Guardian_Name?: string;
-    Guardian_email?: string;
-    Child_name?: string;
-    Child_age?: string;
+    GuardianName?: string;
+    GuardianEmail?: string;
+    ChildName?: string;
+    ChildAge?: string;
     Phone?: string;
   }
   
   const [Success,setSuccess]=useState(false)
-  const [formData,setFormData]=useState<FormData>({
-    Guardian_Name:"",
-    Guardian_email:"",
-    Child_name:"",
-    Child_age:"",
+  const {register,handleSubmit}=useForm<FormData>()
+  const [formData,setFormData]=useState({
+    GuardianName:"",
+    GuardianEmail:"",
+    ChildName:"",
+    ChildAge:"",
     Phone:""
   })
 
@@ -36,35 +38,35 @@ const Admission :React.FC= () => {
   const [errors, setErrors] = useState<FormErrors>({});
 
 
-  const isValidEmail=(Guardian_email:any)=>{
+  const isValidEmail=(GuardianEmail:any)=>{
     const emailRegex = /^\S+@\S+$/;
-    return emailRegex.test(Guardian_email)
+    return emailRegex.test(GuardianEmail)
   }
   const validPhone=(Phone:any)=>{
     const phoneRegex=/^\d{10}$/;
     return phoneRegex.test(Phone)
   }
-  const validateForm = (): boolean => {
+  const validateForm = (formData: FormData): formData is NonNullable<FormData> =>{
     let newErrors: FormErrors = {};
-  
-    if (!formData.Guardian_Name.trim()) {
-      newErrors.Guardian_Name = "Guardian Name is required";
+
+    if (!formData.GuardianName.trim()) {
+      newErrors.GuardianName = "Guardian Name is required";
     }
   
-    if (!formData.Guardian_email.trim()) {
-      newErrors.Guardian_email = "Email is required";
-    } else if (!isValidEmail(formData.Guardian_email.trim())) {
-      newErrors.Guardian_email = "Invalid email format";
+    if (!formData.GuardianEmail.trim()) {
+      newErrors.GuardianEmail = "Email is required";
+    } else if (!isValidEmail(formData.GuardianEmail.trim())) {
+      newErrors.GuardianEmail = "Invalid email format";
     }
   
-    if (!formData.Child_name.trim()) {
-      newErrors.Child_name = "Child name is required";
+    if (!formData.ChildName.trim()) {
+      newErrors.ChildName = "Child name is required";
     }
   
-    if (!formData.Child_age) {
-      newErrors.Child_age = "Child Age is required";
-    } else if (isNaN(Number(formData.Child_age))) {
-      newErrors.Child_age = "Child Age must be a number";
+    if (!formData.ChildAge) {
+      newErrors.ChildAge = "Child Age is required";
+    } else if (isNaN(Number(formData.ChildAge))) {
+      newErrors.ChildAge = "Child Age must be a number";
     }
   
     if (!formData.Phone.trim()) {
@@ -79,48 +81,40 @@ const Admission :React.FC= () => {
   console.log(errors);
   
 
-  const submitForm= async(e:any)=>{
-    e.preventDefault();
+// Define FormData interface
 
-    setTimeout(()=>{
-      setSuccess(false)
-    },1500)
-    const isValid=validateForm()
-    if(isValid){
-      console.log("form submitted",formData);
-      setSuccess(true)
-      toast.success('Form successfully submitted')
 
-      /*SUPABASE STARTS*/
-      const {data,error} =await supabase
-      .from('orders')
-      .insert([formData])
-  
-      if(error){
-        toast.error('Something went wrong')
-        console.log(error)
+const onSubmit: SubmitHandler<FormData> = async (formData) => {
+  if (validateForm(formData)) {
+    await createUser(formData);
+    setSuccess(true);
+    toast.success("Form successfully submitted");
+  }
+};
+const createUser = async (formData: FormData) => {
+  try {
+    const savedResponse = await fetch(
+      `http://localhost:4000/api/v1/createUser`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData) // Pass formData directly
       }
-      if(data){
-        console.log(data)
-      }
-      /*Supabase ends*/
+    );
 
-    }else{
-      console.log("form validation failed");
-      setSuccess(false)
-      toast.error('Please fill your details')
+    if (!savedResponse.ok) {
+      throw new Error('Failed to save user data');
     }
- 
-  }
-  const handleChange=(e:any)=>{
-    const {name,value}=e.target;
 
-    setFormData({
-      ...formData,
-      [name]:value
-    })
+    console.log("response", savedResponse);
+  } catch (error) {
+    console.error('Error while saving user data:', error);
+    // Handle error (e.g., show toast message or log it)
+    toast.error('Failed to submit form. Please try again later.');
   }
- 
+}
+
   return (
     <div className='admission'>
         <div className='admission-background'>
@@ -162,57 +156,63 @@ const Admission :React.FC= () => {
             <h1><span style={{color:"#253b70"}}>Make</span> <span style={{color:"tomato"}}>Appointment</span></h1>
           </div>
           <div className="form-admission">
-            <form onSubmit={submitForm} >
+            <form onSubmit={handleSubmit(onSubmit)} >
               <div>
-                <input type="text" 
-                name='Guardian_Name'
-                placeholder='Guardian Name'
-                value={formData.Guardian_Name} 
-                onChange={handleChange}
-                />
-                
-                {errors.Guardian_Name &&<div className='form-error'>{errors.Guardian_Name}</div>}
+              <input
+                type="text"
+                placeholder="Guardian Name"
+                {...register('GuardianName')} // Provide name attribute via register
+                value={formData.GuardianName}
+                onChange={(e) => setFormData({ ...formData, GuardianName: e.target.value })}
+              />
+                {errors.GuardianName &&<div className='form-error'>{errors.GuardianName}</div>}
                 </div>
                 <div>
                 <input type="text"
-                name="Guardian_email" 
+           
                  id="" 
                  placeholder='Guardian Email'
-                 value={formData.Guardian_email}
-                onChange={handleChange}/>
-              {errors.Guardian_email &&<div className='form-error'>{errors.Guardian_email}</div>}
+                 value={formData.GuardianEmail}
+                 {...register("GuardianEmail")}
+                 onChange={(e)=>setFormData({...formData,GuardianEmail:e.target.value})}
+              />
+              {errors.GuardianEmail &&<div className='form-error'>{errors.GuardianEmail}</div>}
               </div>
                 <div>
                 <input type="text"
-                 name="Child_name"
                  id=""
                  placeholder='Child Name'
-                 value={formData.Child_name}
-                onChange={handleChange}/>
+                 value={formData.ChildName}
+                 {...register('ChildName')}
+                 onChange={(e)=>setFormData({...formData,ChildName:e.target.value})}
+              />
                 
-              {errors.Child_name &&<div className='form-error'>{errors.Child_name}</div>}
+              {errors.ChildName &&<div className='form-error'>{errors.ChildName}</div>}
               </div>
 
                   <div>
                 <input type="number" 
 
-                name="Child_age"
+       
                 id="" 
                 placeholder='Child Age'
-                value={formData.Child_age}
-                onChange={handleChange}/>
+                value={formData.ChildAge}
+                {...register('ChildAge')}
+                onChange={(e)=>setFormData({...formData,ChildAge:e.target.value})}
+              />
                 
-              {errors.Child_age &&<div className='form-error'>{errors.Child_age}</div>}
+              {errors.ChildAge &&<div className='form-error'>{errors.ChildAge}</div>}
               </div>
 
                  <div>
                 <input type="number"
 
-                 name="Phone"
                  id=""
                  placeholder='Phone'
                  value={formData.Phone}
-                onChange={handleChange}/>
+                 {...register('Phone')}
+                 onChange={(e)=>setFormData({...formData,Phone:e.target.value})}
+              />
 
               {errors.Phone &&<div className='form-error'>{errors.Phone}</div>}
              </div>
@@ -227,6 +227,7 @@ const Admission :React.FC= () => {
         <Footer/>
     </div>
   )
-}
+   }
 
-export default Admission
+
+export default Admission;

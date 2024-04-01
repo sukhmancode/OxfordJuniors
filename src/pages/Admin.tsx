@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import supabase from '../config/supaClient';
+import axios from 'axios';
 
 const Admin: React.FC = () => {
   interface Record {
@@ -12,6 +13,8 @@ const Admin: React.FC = () => {
 
   const [fetchError, setFetchError] = useState('');
   const [records, setRecords] = useState<Record[]>([]);
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
 
   useEffect(() => {
     const fetchRecords = async () => {
@@ -29,6 +32,8 @@ const Admin: React.FC = () => {
     fetchRecords();
   }, []);
 
+
+
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission
     console.log('Form submitted'); // Add logging for debugging
@@ -39,36 +44,14 @@ const Admin: React.FC = () => {
     <div className="admin">
       <img src="admin.avif" alt="" />
       <form className="form" onSubmit={submitForm}>
-        <h1>Admin Login</h1>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
+        <h1 className='admin-log-head'>Admin Login</h1>
+        <input type="email" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
+        <input type="password" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}/>
         <input type="submit" value="Login" /> {/* Changed button type to submit */}
       </form>
 
       <div className="data">
-        <table className="table-fetch">
-          <thead>
-            <tr>
-              <th>Guardian Name</th>
-              <th>Guardian Email</th>
-              <th>Child Name</th>
-              <th>Child Age</th>
-              <th>Phone</th>
-            </tr>
-          </thead>
-          <tbody>
-            {fetchError && <tr><td colSpan={5}>{fetchError}</td></tr>}
-            {records.map((rec, index) => (
-              <tr key={index}>
-                <td>{rec.Guardian_Name}</td>
-                <td>{rec.Guardian_email}</td>
-                <td>{rec.Child_name}</td>
-                <td>{rec.Child_age}</td>
-                <td>{rec.Phone}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+     
       </div>
     </div>
   );

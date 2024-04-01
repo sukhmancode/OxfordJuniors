@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
     "aos": "^2.3.4",
+    "axios": "^1.6.8",
     "express-fileupload": "^1.5.0",
     "lightgallery": "^2.7.2",
     "react": "^18.2.0",

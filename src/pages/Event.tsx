@@ -9,7 +9,7 @@ const Event:React.FC = () => {
     description:string;
     urlToImage:string
   }
-  const apiUrl = "https://newsapi.org/v2/everything?q=kindergarten";
+  const apiUrl = "https://newsapi.org/v2/everything?q=devin";
   
   const fetchData = async () => {
     try {
@@ -35,7 +35,7 @@ const Event:React.FC = () => {
       </div>
         <div className='news-data'>
           {
-            newsData.slice(0,7).map((article,idx)=>(
+            newsData.slice(0,10).map((article,idx)=>(
               <div key={idx} className='news-content'>
                 <img src={article.urlToImage} alt="" width={200}/>
               <h2>{article.title}</h2>
@@ -48,5 +48,4 @@ const Event:React.FC = () => {
     </div>
   )
 }
-
 export default Event
