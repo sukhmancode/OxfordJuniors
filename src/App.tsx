@@ -12,6 +12,8 @@ import Event from './pages/Event'
 import Teachers from './pages/Teachers'
 import Admin from './pages/Admin'
 import JobApply from './pages/JobApply'
+import AdminDash from './pages/AdminDash'
+import Allusers from './components/Allusers'
 
 
 const App :React.FC=()=>{
@@ -34,6 +36,8 @@ const App :React.FC=()=>{
       <Route path='/teacher' element={<Teachers/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>
       <Route path='/job' element={<JobApply/>}></Route>
+      <Route path='/AdminDashboard' element={<AdminDash/>}></Route>
+      <Route path='/Allusers' element={<Allusers/>}></Route>
     </Routes>
  
   </div>

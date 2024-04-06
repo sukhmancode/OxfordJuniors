@@ -76,9 +76,8 @@ button{
     font-family: var(--poppins);
 }
 .banner{
-    padding-inline: 10rem;
+    padding: 5rem 10rem;
     display: flex;
-    justify-content: space-between;
 }
 .banner-text{
     margin-top: 10rem;
@@ -96,19 +95,8 @@ button{
     font-size: 5rem;
     color: #253b70;
 }
-.kid-image{
-    
-    position: relative;
-}
-.kid-image img{
-    
-    z-index: -1111111111;
 
-   
-}
 .kid-img-main{
-    z-index: -11111111111;
-    margin-block:3rem;
     width: 380px;
     border-radius: 12px;
 }
@@ -128,15 +116,23 @@ button{
     border: 1px solid var(--tomato-color);
 }
 .gallery{
-   transform: translateY(7rem);
+   transform: translate(-5rem,6rem);
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
     gap: 1rem;
-    border-bottom: 1px solid #000;
     border-radius: 8px;
     box-shadow: 0 5px 5px #ccc;
-    z-index: 111111111111;
+}
+.gall-dropdown{
+    transform: translateY(6rem);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    gap: 1rem;
+    border-radius: 8px;
+    z-index: 1111;
+    box-shadow: 0 5px 5px #ccc;
 }
 .gallery p{
     text-align: center;
@@ -372,10 +368,11 @@ button{
 .look-around-btns{
     margin-top: 3rem;
     display: flex;
-    gap: 6rem;
+    gap: 3rem;
    
 }
 .look-around-btns button{
+    width: 100%;
     padding: 1rem 2rem; 
     border-radius: 3.2rem;
     font-size: 1.8rem;
@@ -661,6 +658,7 @@ color: var(--tomato-color);
 }
 .about-photo p{
     width: 50%;
+    font-weight: 700;
     color: #1044bd;
     text-align: center;
 }
@@ -743,7 +741,8 @@ color: var(--tomato-color);
 .about-card-img{
     width: 350px;
     height: 300px;
-    
+    object-fit: cover;
+    object-position: top;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
@@ -822,6 +821,7 @@ color: var(--tomato-color);
 }
 
 .video-container video{
+    border-radius: 3.2rem;
     z-index: 9999;
     padding: 3rem;
     background-color: #000;
@@ -931,6 +931,7 @@ color: var(--tomato-color);
 .teacher{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
     margin-top: 3rem;
@@ -957,6 +958,22 @@ color: var(--tomato-color);
     align-items: center;
     padding: 1rem;
 }
+.admin-banner{
+    width: 60%;
+    background-blend-mode: color-burn;
+}
+.admin-wrapper{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rem 5rem;
+    gap: 10rem;
+}
+.admin-interface{
+    display: flex;
+    justify-content: space-between;
+}
+
 .admin-log-head{
     transform: translateY(1rem);
 }
@@ -970,6 +987,13 @@ color: var(--tomato-color);
 }
 .admin img{
     width: 300px;
+}
+.admin-dash-li li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 2rem;
 }
 /*Job Portal*/
 .job-img img{
@@ -1135,12 +1159,17 @@ label {
     padding: 1rem;
 }
 
-@media screen and (max-width:1224px) {
+@media screen and (max-width:1350px) {
     .banner{
         align-items: center;
         justify-content: center;
-        flex-direction: column;
         padding-inline: 2rem;
+      }
+      .look-around-section{
+        padding: 5rem;
+      }
+      .welcome-p p{
+        width: 100%;
       }
       .form-area{
         justify-content: center;
@@ -1148,8 +1177,36 @@ label {
         flex-direction: column;
         gap:5rem;
     }
+    .kid-img-main{
+        width: 300px;
+    }
+    .welcome-p-content{
+        width: 100%;
+        margin-top: 3rem;
+    }
 }
 @media screen and (max-width:1024px) {
+    .footer{
+        flex-wrap: wrap
+    }
+    .values-content p{
+        width: 100%;
+    }
+    .cards-here{
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+         flex-wrap: wrap;
+        }
+        .about-photo{
+            padding: 2rem;
+        }
+        .about-photo p{
+            width: 100%;
+        }
+        .about-photo h1{
+            font-size: 4rem;
+        }
     html,body{
         margin:0;
         padding:0;
@@ -1181,30 +1238,24 @@ label {
 text-align: center;
     }
 .welcome-content{
-    
     align-items: center;
     justify-content: center;
     width: 100%;
 }
+.kid-img-main{
+    width: 200px;
+}
+
 }
   @media screen and (max-width:830px) {
 
-    .feature-cards{
-        flex-direction: column;
-    }
-   
     .look-around-section img{
         width: 35rem;
     }
-   .cards-here{
-   justify-content: center;
-   align-items: center;
-   gap: 5rem;
-    flex-direction: column;
-   }
-   
+
 .games{
-    flex-direction: column;
+ flex-wrap: wrap;
+ justify-content: center;
 }
   .banner-text h1{
     font-size: 3.5rem;
@@ -1214,9 +1265,7 @@ text-align: center;
 .banner-text p{
     width: 100%;
 }
-.look-around-btns{
-    flex-direction: column;
-}
+
 .oppurtunity-heading{
     width: 80%;
     font-size: 3.5rem;
@@ -1229,12 +1278,10 @@ text-align: center;
     font-size: 3.5rem;
 }
 .look-around-para h2{
+    font-size: 3rem;
     width: 100%;
 }
-.footer{
-    flex-direction: column;
-    gap: 2rem;
- }
+
  .admission-steps{
     flex-direction: column;
  }
@@ -1250,24 +1297,27 @@ text-align: center;
 .heading{
     width: 100%;
 }
+.look-around-btns{
+    flex-wrap: wrap;
+}
+.banner{
+    flex-direction: column;
+}
 .heading p{
     font-size: 3.5rem;
 }
 .feature-para{
     width: 100%;
 }
-.kid-img-main{
-    width: 320px;
-}
 .form-admission input[type="text"]{
     border: 1px solid #ccc;
     border-radius: 3.6rem;
     width: 450px;
 
-}.form-admission input[type="email"]{
+}
+.form-admission input[type="email"]{
     border: 1px solid #ccc;
     border-radius: 3.6rem;
-
     width: 450px;
 }
 .form-admission input[type="number"]{
@@ -1280,17 +1330,24 @@ text-align: center;
     width: 100%;
 }
 .look-around-para h2{
+    width: 100%;
+}
+.banner-text h1{
     font-size: 3rem;
 }
 
-  }
+.banner-text{
+    text-align: center;
+}
+
+}
 @media screen and (max-width:400px) {
   
     html{
         font-size: 45%;
     }
     .banner{
-        padding-inline: 0rem;
+        padding-inline-start: 0.5rem;
     }
     .admission-card p,h2{
         width: 100%;
@@ -1307,7 +1364,6 @@ text-align: center;
     }.form-admission input[type="email"]{
         border: 1px solid #ccc;
         border-radius: 3.6rem;
-    
         width: 320px;
     }
     .form-admission input[type="number"]{

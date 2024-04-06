@@ -64,8 +64,6 @@ const GalleryMain :React.FC= () => {
               <a className="image"href="gall-3.jpg">
                 <img className='gall-image' alt="img2" src="gall-3.jpg" />
             </a>
-
-         
         </LightGallery>
       </div>
     

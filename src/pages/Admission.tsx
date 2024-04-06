@@ -3,7 +3,8 @@ import Footer from '../components/footer'
 import Success1 from '../components/success'
 import {toast} from 'react-hot-toast'
 import Nav2 from '../components/nav2'
-import {useForm,SubmitHandler } from 'react-hook-form'
+import { addDoc,collection,doc,setDoc } from 'firebase/firestore'
+import { db } from '../firebase/firebase'
 
 const Admission :React.FC= () => {
   interface FormData {
@@ -24,7 +25,6 @@ const Admission :React.FC= () => {
   }
   
   const [Success,setSuccess]=useState(false)
-  const {register,handleSubmit}=useForm<FormData>()
   const [formData,setFormData]=useState({
     GuardianName:"",
     GuardianEmail:"",
@@ -37,7 +37,42 @@ const Admission :React.FC= () => {
 
   const [errors, setErrors] = useState<FormErrors>({});
 
-
+  const handleAdd = async (e:any) => {
+    e.preventDefault();
+  
+    if (validateForm(formData)) {
+      try {
+        // Add document to Firestore collection
+        await addDoc(collection(db, 'admissionData'), {
+          GuardianName: formData.GuardianName,
+          GuardianEmail: formData.GuardianEmail,
+          ChildName: formData.ChildName,
+          ChildAge: formData.ChildAge,
+          Phone: formData.Phone
+        });
+  
+        // Reset form data
+        setFormData({
+          GuardianName: "",
+          GuardianEmail: "",
+          ChildName: "",
+          ChildAge: "",
+          Phone: ""
+        });
+  
+        // Reset success state and show success toast
+        setSuccess(true);
+        toast.success("Form successfully submitted");
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        // Handle error if necessary
+      }
+    } else {
+      // Form validation failed, do not submit
+      console.error("Form validation failed.");
+    }
+  };
+  
   const isValidEmail=(GuardianEmail:any)=>{
     const emailRegex = /^\S+@\S+$/;
     return emailRegex.test(GuardianEmail)
@@ -81,46 +116,15 @@ const Admission :React.FC= () => {
   console.log(errors);
   
 
-// Define FormData interface
 
 
-const onSubmit: SubmitHandler<FormData> = async (formData) => {
-  if (validateForm(formData)) {
-    await createUser(formData);
-    setSuccess(true);
-    toast.success("Form successfully submitted");
-  }
-};
-const createUser = async (formData: FormData) => {
-  try {
-    const savedResponse = await fetch(
-      `http://localhost:4000/api/v1/createUser`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData) // Pass formData directly
-      }
-    );
 
-    if (!savedResponse.ok) {
-      throw new Error('Failed to save user data');
-    }
-
-    console.log("response", savedResponse);
-  } catch (error) {
-    console.error('Error while saving user data:', error);
-    // Handle error (e.g., show toast message or log it)
-    toast.error('Failed to submit form. Please try again later.');
-  }
-}
 
   return (
     <div className='admission'>
         <div className='admission-background'>
         <Nav2/>
         <div className="admission-text">
-           
             </div>
         </div>
 
@@ -156,16 +160,16 @@ const createUser = async (formData: FormData) => {
             <h1><span style={{color:"#253b70"}}>Make</span> <span style={{color:"tomato"}}>Appointment</span></h1>
           </div>
           <div className="form-admission">
-            <form onSubmit={handleSubmit(onSubmit)} >
+            <form onSubmit={handleAdd}>
               <div>
               <input
                 type="text"
                 placeholder="Guardian Name"
-                {...register('GuardianName')} // Provide name attribute via register
                 value={formData.GuardianName}
                 onChange={(e) => setFormData({ ...formData, GuardianName: e.target.value })}
               />
-                {errors.GuardianName &&<div className='form-error'>{errors.GuardianName}</div>}
+                {errors.GuardianName &&<div className='form-error'>{errors.GuardianName}</div>
+                }
                 </div>
                 <div>
                 <input type="text"
@@ -173,7 +177,6 @@ const createUser = async (formData: FormData) => {
                  id="" 
                  placeholder='Guardian Email'
                  value={formData.GuardianEmail}
-                 {...register("GuardianEmail")}
                  onChange={(e)=>setFormData({...formData,GuardianEmail:e.target.value})}
               />
               {errors.GuardianEmail &&<div className='form-error'>{errors.GuardianEmail}</div>}
@@ -183,40 +186,30 @@ const createUser = async (formData: FormData) => {
                  id=""
                  placeholder='Child Name'
                  value={formData.ChildName}
-                 {...register('ChildName')}
                  onChange={(e)=>setFormData({...formData,ChildName:e.target.value})}
               />
-                
               {errors.ChildName &&<div className='form-error'>{errors.ChildName}</div>}
               </div>
 
                   <div>
                 <input type="number" 
-
-       
                 id="" 
                 placeholder='Child Age'
                 value={formData.ChildAge}
-                {...register('ChildAge')}
                 onChange={(e)=>setFormData({...formData,ChildAge:e.target.value})}
               />
                 
               {errors.ChildAge &&<div className='form-error'>{errors.ChildAge}</div>}
               </div>
-
                  <div>
                 <input type="number"
-
                  id=""
                  placeholder='Phone'
                  value={formData.Phone}
-                 {...register('Phone')}
                  onChange={(e)=>setFormData({...formData,Phone:e.target.value})}
-              />
-
+                />
               {errors.Phone &&<div className='form-error'>{errors.Phone}</div>}
              </div>
-
                 <input type="submit" value="Submit" />
             </form>
             {

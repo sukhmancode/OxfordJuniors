@@ -40,7 +40,7 @@ const Nav: React.FC = () => {
         </div>
         <div
           className="gallery-dropdown"
-          onMouseEnter={() => setOpen(true)}
+          onMouseMove={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
           onClick={()=>setOpen(!open)}
         >
@@ -62,16 +62,22 @@ const Nav: React.FC = () => {
         </Link>
       </div>
       <div className="mobile-navbar-btn" onClick={setMobileview}>
-        <CgMenu
-          name="menu-outline"
-          className="mobile-nav-icon"
-          onClick={() => setOpenMenu(true)}
-        />
-        <RxCross1
-          name="close-outline"
-          className="close-outline mobile-nav-icon"
-          onClick={() => setOpenMenu(false)}
-        />
+      <div className="mobile-navbar-btn" onClick={setMobileview}>
+        {openMenu ? (
+          <RxCross1
+            name="close-outline"
+            className="close-outline mobile-nav-icon"
+            onClick={() => setOpenMenu(false)}
+          />
+        ) : (
+          <CgMenu
+            name="menu-outline"
+            className="mobile-nav-icon"
+            onClick={() => setOpenMenu(true)}
+          />
+        )}
+</div>
+
       </div>
     </div>
   );

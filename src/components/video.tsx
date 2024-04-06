@@ -8,7 +8,7 @@ useEffect(() => {
 },[]);
   return (
     <div className='video-containr'>
-        <video src="preview.mp4" 
+        <video src="preview.mp4" style={{borderRadius:"32px"}}
         controls
         autoPlay
         ref={vidRef}

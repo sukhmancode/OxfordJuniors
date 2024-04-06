@@ -7,9 +7,9 @@ const Event:React.FC = () => {
     author: string;
     title:string;
     description:string;
-    urlToImage:string
+    urlToImage:string;
   }
-  const apiUrl = "https://newsapi.org/v2/everything?q=devin";
+  const apiUrl = "https://newsapi.org/v2/everything?q=gk";
   
   const fetchData = async () => {
     try {
@@ -25,7 +25,7 @@ const Event:React.FC = () => {
 
 
   useEffect(()=>{
-    fetchData()
+    fetchData();
   },[])
   return (
     <div className='event'>
@@ -39,7 +39,7 @@ const Event:React.FC = () => {
               <div key={idx} className='news-content'>
                 <img src={article.urlToImage} alt="" width={200}/>
               <h2>{article.title}</h2>
-              <p>{article.description}</p>
+              <p>{article.description.slice(0,50)}</p>
               </div>
             ))
           }

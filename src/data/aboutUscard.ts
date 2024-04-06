@@ -13,7 +13,7 @@ const AboutUs=[
     
     },
     {
-        img:"https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087dbd2fbf5e0002176d861_optimized_1200_c875x583-204x20.webp",
+        img:"learn-play.jpg",
         text:"Learning through Play:",
         content:"Emphasize the importance of play-based learning.supports growth in all areas.",
         bColor:'#f6b407'
