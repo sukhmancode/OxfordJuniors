@@ -3,7 +3,7 @@ import Footer from '../components/footer'
 import Success1 from '../components/success'
 import {toast} from 'react-hot-toast'
 import Nav2 from '../components/nav2'
-import { addDoc,collection,doc,setDoc } from 'firebase/firestore'
+import { addDoc,collection } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
 
 const Admission :React.FC= () => {
@@ -114,11 +114,6 @@ const Admission :React.FC= () => {
     return Object.keys(newErrors).length === 0;
   };
   console.log(errors);
-  
-
-
-
-
 
   return (
     <div className='admission'>

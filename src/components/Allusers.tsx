@@ -1,36 +1,40 @@
 import React from 'react'
-import Sidebar from './sidebar'
 
-const Allusers:React.FC = () => {
+interface User {
+    GuardianName: string;
+    GuardianEmail: string;
+    ChildName: string;
+    ChildAge: number;
+    Phone: string;
+  }
+interface UserProps{
+    userRows:User[]
+}
+const Allusers:React.FC<UserProps> = ({userRows}) => {
   return (
     <div>
-        <table>
-    <thead>
-        <tr>
+    <table>
+        <thead>
+          <tr>
             <th>Guardian Name</th>
             <th>Guardian Email</th>
             <th>Child Name</th>
             <th>Child Age</th>
             <th>Phone</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>John Doe</td>
-            <td>johndoe@example.com</td>
-            <td>Emily Doe</td>
-            <td>8</td>
-            <td>123-456-7890</td>
-        </tr>
-        <tr>
-            <td>Jane Smith</td>
-            <td>janesmith@example.com</td>
-            <td>Michael Smith</td>
-            <td>5</td>
-            <td>987-654-3210</td>
-        </tr>
-    </tbody>
-</table>
+          </tr>
+        </thead>
+        <tbody>
+          {userRows.map((user) => (
+            <tr key={user.GuardianEmail}>
+              <td>{user.GuardianName}</td>
+              <td>{user.GuardianEmail}</td>
+              <td>{user.ChildName}</td>
+              <td>{user.ChildAge}</td>
+              <td>{user.Phone}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }

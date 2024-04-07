@@ -4,20 +4,30 @@ import { app } from '../firebase/firebase';
 import toast from 'react-hot-toast';
 import AdminDash from './AdminDash';
 
+interface User {
+  uid: string;
+  displayName?: string | null;
+  email?: string | null;
+  photoURL?: string | null;
+}
 const Admin: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [logoutTimer, setLogoutTimer] = useState<NodeJS.Timeout | null>(null); // State to store logout timer
 
   const auth = getAuth(app);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
-      setUser(user);
+      if (user) {
+        const { uid, displayName, email, photoURL } = user;
+        setUser({ uid, displayName, email, photoURL });
+      } else {
+        setUser(null);
+      }
     });
 
-    // Clean up timer on component unmount
     return () => {
       unsubscribe();
       clearLogoutTimer();
@@ -77,7 +87,8 @@ const Admin: React.FC = () => {
     <div className="admin">
       {user ? (
         <div>
-          <AdminDash />
+          <AdminDash logout={logoutUser} 
+         />
         </div>
       ) : (
         <div className="admin-wrapper">
