@@ -1,31 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../components/nav';
 import Footer from '../components/footer';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase/firebase';
+
+
 
 const Event:React.FC = () => {
   interface Article {
-    author: string;
+    id:string,
     title:string;
     description:string;
-    urlToImage:string;
+    imageUrl:string;
   }
-  const apiUrl = "https://newsapi.org/v2/everything?q=gk";
-  
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`${apiUrl}&apiKey=93f1d75f02d4450b80794c2a4128668c`);
-      const data = await response.json();
-      console.log(data);
-      setNewsData(data.articles);
-    } catch (error) {
-      console.error("Error fetching data:", error);
+  const UsercollRef = collection(db,'eventsData')
+  const [eventData,setEventData]=useState<Article[]>([])
+  const getEvents = async() =>{
+    try{
+      const fetchQuery=await getDocs(UsercollRef)
+      const fetchedEvents:Article[]= fetchQuery.docs.map((doc=>{
+        const eventData=doc.data();
+        
+        return{
+          id:doc.id,
+          title:eventData.title,
+          description:eventData.description,
+          imageUrl:eventData.imageUrl
+        }
+      }));
+      setEventData(fetchedEvents)
     }
-  };
-  const [newsData,setNewsData]=useState<Article[]>([]);
+    catch(err){
+      console.log(err);
+    }
+  }
 
 
   useEffect(()=>{
-    fetchData();
+    getEvents()
   },[])
   return (
     <div className='event'>
@@ -35,9 +47,9 @@ const Event:React.FC = () => {
       </div>
         <div className='news-data'>
           {
-            newsData.slice(0,10).map((article,idx)=>(
-              <div key={idx} className='news-content'>
-                <img src={article.urlToImage} alt="" width={200}/>
+            eventData.map((article)=>(
+              <div className='news-content'>
+                <img src={article.imageUrl} alt=""width={300} />
               <h2>{article.title}</h2>
               <p>{article.description.slice(0,50)}</p>
               </div>

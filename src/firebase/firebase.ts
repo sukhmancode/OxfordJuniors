@@ -1,17 +1,19 @@
 import {initializeApp} from 'firebase/app'
 import {getFirestore} from 'firebase/firestore'
 import { GoogleAuthProvider } from 'firebase/auth';
-
+import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAmZU4dV2KEPQupyuzjIwHBhHCs0hAqmHw",
-    authDomain: "oxford-kg.firebaseapp.com",
-    projectId: "oxford-kg",
-    storageBucket: "oxford-kg.appspot.com",
-    messagingSenderId: "228532204402",
-    appId: "1:228532204402:web:6879feddb6827ef1d9a3eb"
-  };
+  apiKey: "AIzaSyBcZpo704mgqr4u_RK-UNWDXa-Nbx7S8uE",
+  authDomain: "oxford-4e820.firebaseapp.com",
+  projectId: "oxford-4e820",
+  storageBucket: "oxford-4e820.appspot.com",
+  messagingSenderId: "395731080038",
+  appId: "1:395731080038:web:7c4323c95e3a4f3907eea7"
+};
 
-export const app=initializeApp(firebaseConfig)
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+export const imgDb=getStorage(app)
 export const db= getFirestore(app)
 export const googleprovider=new GoogleAuthProvider()

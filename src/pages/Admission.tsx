@@ -42,7 +42,6 @@ const Admission :React.FC= () => {
   
     if (validateForm(formData)) {
       try {
-        // Add document to Firestore collection
         await addDoc(collection(db, 'admissionData'), {
           GuardianName: formData.GuardianName,
           GuardianEmail: formData.GuardianEmail,
@@ -51,7 +50,6 @@ const Admission :React.FC= () => {
           Phone: formData.Phone
         });
   
-        // Reset form data
         setFormData({
           GuardianName: "",
           GuardianEmail: "",
@@ -60,7 +58,6 @@ const Admission :React.FC= () => {
           Phone: ""
         });
   
-        // Reset success state and show success toast
         setSuccess(true);
         toast.success("Form successfully submitted");
       } catch (error) {

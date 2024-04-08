@@ -3,7 +3,7 @@ import {FaUsers, FaFileImage} from 'react-icons/fa'
 import { MdDashboard } from "react-icons/md";import Allusers from './Allusers'
 import {collection, getDocs} from 'firebase/firestore'
 import { db } from '../firebase/firebase';
-
+import EventUploadForm from './EventUploadForm';
 interface SidebarProps{
   logout : () =>void;
 }
@@ -13,6 +13,7 @@ interface User {
   GuardianEmail: string;
   ChildName: string;
   ChildAge: number;
+   
   Phone: string;
 
 }
@@ -23,16 +24,19 @@ const UsercollRef = collection(db,'admissionData')
 
   
   const [showUsers,setShowUsers]=useState(false)
+  const [showEventUpload,setshowEventUpload]=useState(false)
   const [userRows,setUserRows]=useState<User[]>([])
 
   const handleMenuClick=(menuItem:string)=>{
     if(menuItem==='All Users'){
       setShowUsers(true)
-    }else{
-      setShowUsers(false)
     }
+    else if(menuItem ==='Upload'){
+      setShowUsers(false)
+      setshowEventUpload(true)
+    }
+   
   } 
-
   useEffect(()=>{
     getUsers()
   },[])
@@ -40,10 +44,10 @@ const UsercollRef = collection(db,'admissionData')
     try {
       const fetchQuery = await getDocs(UsercollRef);
       const fetchedUsers: User[] = fetchQuery.docs.map((doc) => {
-        const data = doc.data(); // Retrieve the document data
+        const data = doc.data(); 
         return {
           id: doc.id,
-          GuardianName: data.GuardianName || '', // Ensure properties exist or provide default values
+          GuardianName: data.GuardianName || '',
           GuardianEmail: data.GuardianEmail || '',
           ChildName: data.ChildName || '',
           ChildAge: data.ChildAge || 0,
@@ -53,7 +57,6 @@ const UsercollRef = collection(db,'admissionData')
       setUserRows(fetchedUsers);
     } catch (error) {
       console.error('Error fetching users:', error);
-      // Handle error (e.g., show error message)
     }
   };
   return (
@@ -71,12 +74,18 @@ const UsercollRef = collection(db,'admissionData')
         </div>
 
         <div className="admin-content">
-          {showUsers ? (<Allusers userRows={userRows} />):(
-            <div>
-              <p>Hello  </p>
-            </div>
-          )}
-        </div>
+  {showUsers ? (
+    <Allusers userRows={userRows} />
+  ) : showEventUpload ? (
+    <div>
+      <EventUploadForm />
+    </div>
+  ) : (
+    <div>
+      <p>Hello User</p>
+    </div>
+  )}
+</div>
 
         <div className='admin-logout-btn'>
             <button onClick={logout}>Log Out</button>

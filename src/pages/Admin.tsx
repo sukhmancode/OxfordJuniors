@@ -66,7 +66,7 @@ const Admin: React.FC = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
           setUser(userCredential.user);
-          setLogoutTimer(setTimeout(logoutUser, 15 * 60 * 10000)); // Set logout timer on login
+          setLogoutTimer(setTimeout(logoutUser, 15 * 60 * 10000));
           toast.success('Successfully logged in');
         })
         .catch(error => {
