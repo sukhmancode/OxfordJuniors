@@ -5,6 +5,7 @@ import 'firebase/storage';
 import {v4 as uuidv4} from 'uuid'
 import { db, imgDb } from '../firebase/firebase';
 import { addDoc, collection } from 'firebase/firestore';
+import toast from 'react-hot-toast';
 const EventUploadForm:React.FC = () => {
 
 
@@ -13,14 +14,13 @@ const EventUploadForm:React.FC = () => {
     const [image,setImage]=useState<File| null>(null)
 
     
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0]; // Get the selected file from input
-    
+    const handleImageUpload=(e: React.ChangeEvent<HTMLInputElement>) => {
+        const file=e.target.files?.[0]; 
         if (file) {
           setImage(file);
         }
       };
-    const handleEventUpload =async (e:React.FormEvent<HTMLFormElement>)=>{
+    const handleEventUpload=async(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
 
         if(!title || !description || !image){
@@ -39,7 +39,7 @@ const EventUploadForm:React.FC = () => {
                 imageUrl:imageUrl
             })
             console.log(imageUrl);
-            alert('image uploaded')
+            toast.success('Image Uploaded Successfully')
             
             setTitle('')
             setDescription('')
@@ -47,7 +47,7 @@ const EventUploadForm:React.FC = () => {
         }
         catch(err){
             console.log(err);
-            alert('image uploading failed') 
+            toast.error('Image Uploading failed') 
         }
     }
   return (

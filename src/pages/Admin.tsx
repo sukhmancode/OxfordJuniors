@@ -53,7 +53,7 @@ const Admin: React.FC = () => {
     signOut(auth)
       .then(() => {
         setUser(null);
-        toast.success('Automatically logged out due to inactivity');
+        toast.success('logged out');
       })
       .catch(error => {
         console.error('Error signing out:', error);
@@ -87,14 +87,12 @@ const Admin: React.FC = () => {
     <div className="admin">
       {user ? (
         <div>
-          <AdminDash logout={logoutUser} 
-         />
+          <AdminDash logout={logoutUser}
+          />
         </div>
       ) : (
         <div className="admin-wrapper">
-          <div className="admin-wrap-photo">
-            <img src="admin-login.jpg" alt="" />
-          </div>
+         
           <div>
             <form className="form" onSubmit={handleSubmit}>
               <h1 className="admin-log-head">Admin Login</h1>
@@ -112,6 +110,10 @@ const Admin: React.FC = () => {
               />
               <input type="submit" value="Login" />
             </form>
+            
+          </div>
+          <div className="admin-wrap-photo">
+            <img src="admin-login.jpg" alt="" />
           </div>
         </div>
       )}

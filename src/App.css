@@ -405,8 +405,8 @@ color: var(--tomato-color);
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    background-image:linear-gradient(rgba(74, 2, 2, 0.2), rgba(27, 4, 4, 0.3)),
-    url('admissionBg1.png');
+    background-image:linear-gradient(rgba(74, 2, 2, 0.1), rgba(27, 4, 4, 0.1)),
+    url('admission-bg.png');
     background-repeat: no-repeat;
     background-position:center;
     background-origin: padding-box;
@@ -529,6 +529,7 @@ color: var(--tomato-color);
 .mobile-navbar-btn{
     display: none;
     .close-outline{
+        font-size: 3rem;
         display: none;
     }
 }
@@ -878,7 +879,7 @@ color: var(--tomato-color);
 .news-data{
     flex-wrap: wrap;
     display: flex;
-    margin-top: 2rem;
+    margin-block: 5rem;
     justify-content: center;
     align-items: center;
 }
@@ -888,13 +889,15 @@ color: var(--tomato-color);
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    width: 30%;
     gap: 1rem;
     margin: 1rem;
-    height: 400px;
     align-items: center;
     justify-content: center;
     text-align: center
+}
+.news-content img{
+    width: fit-content;
+    height: 300px;
 }
 
 .teacher-background{
@@ -959,6 +962,15 @@ color: var(--tomato-color);
     
 }
 
+.admin-wrapper{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    justify-content: space-between;
+    display: flex;
+
+}
 .admin-banner{
     display: flex;
     align-items: center;
@@ -967,7 +979,11 @@ color: var(--tomato-color);
     font-weight:500;
     background-blend-mode: color-burn;
 }
-
+.admin-wrap-photo{
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
 .admin-content{
     padding-block: 3rem;
 }
@@ -1017,7 +1033,7 @@ color: var(--tomato-color);
     align-items: center;
 }
 .admin img{
-    width: 50px;
+    width: 500px;
 }
 .admin-dash-li li{
     gap: 1rem;
