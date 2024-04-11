@@ -63,10 +63,10 @@ const UsercollRef = collection(db,'admissionData')
     <div className='admin-interface'>
       <div className='admin-options'>
         <ul className='admin-dash-li'>
-          <div className='admin-banner'>
-          <img src="admin-banner.avif"  />
-          <p>Hello,Admin</p>
-          </div>
+        <div className='admin-banner'>
+          <img src="admin-banner.avif" style={{width:"60px"}} />
+          <p>Hello, Admin</p>
+        </div>
         <li onClick={()=> handleMenuClick('Home')}><MdDashboard size={20}/>Home</li>  
         <li onClick={()=> handleMenuClick('All Users')}><FaUsers size={20}/>All Users</li>
         <li onClick={()=> handleMenuClick('Upload')}><FaFileImage size={20}/>Upload</li>

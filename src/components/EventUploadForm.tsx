@@ -24,7 +24,7 @@ const EventUploadForm:React.FC = () => {
         e.preventDefault()
 
         if(!title || !description || !image){
-            alert('Please fill in all the fields and select an image')
+           toast.success('please fill in all details')
             return;
         }
         try{

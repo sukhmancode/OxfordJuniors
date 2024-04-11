@@ -94,8 +94,9 @@ const Admin: React.FC = () => {
         <div className="admin-wrapper">
          
           <div>
-            <form className="form" onSubmit={handleSubmit}>
-              <h1 className="admin-log-head">Admin Login</h1>
+            <form className="form-admin" onSubmit={handleSubmit}>
+              <h1>Log In</h1>
+              <p className="admin-log-head">Please fill your unique admin login details below</p>
               <input
                 type="email"
                 placeholder="Email"
