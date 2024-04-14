@@ -23,6 +23,7 @@
     "firebase": "^10.10.0",
     "lightgallery": "^2.7.2",
     "mui": "^0.0.1",
+    "node": "^18.20.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.50.1",

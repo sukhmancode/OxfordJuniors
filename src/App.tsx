@@ -12,8 +12,7 @@ import Event from './pages/Event'
 import Teachers from './pages/Teachers'
 import Admin from './pages/Admin'
 import JobApply from './pages/JobApply'
-import AdminDash from './pages/AdminDash'
-import Allusers from './components/Allusers'
+
 
 
 const App :React.FC=()=>{

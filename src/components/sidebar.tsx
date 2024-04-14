@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {FaUsers, FaFileImage, FaTeamspeak} from 'react-icons/fa'
 import { MdDashboard } from "react-icons/md";import Allusers from './Allusers'
-import {collection, getDocs} from 'firebase/firestore'
+import {Timestamp, collection, getDocs} from 'firebase/firestore'
 import { db } from '../firebase/firebase';
 import EventUploadForm from './EventUploadForm';
 import TeacherDetails from '../pages/TeacherDetails';
@@ -14,25 +14,36 @@ interface User {
   GuardianEmail: string;
   ChildName: string;
   ChildAge: number;
-   
   Phone: string;
 
 }
 
-
+interface Teacher {
+  id:string,
+  FirstName:string,
+  LastName:string,
+  Mobile:number,
+  Email:string,
+  DOB:Timestamp,
+  City:string,
+  Address:string,
+  cvFileUrl:string
+}
 const Sidebar:React.FC<SidebarProps> = ({logout}) => {
 const UsercollRef = collection(db,'admissionData')
+const TeacherCollRef = collection (db ,'TeacherData')
 
   const [showUsers,setShowUsers]=useState(false)
   const [showEventUpload,setshowEventUpload]=useState(false)
   const [userRows,setUserRows]=useState<User[]>([])
   const [showTeacherData,setshowTeacherData]=useState(false)
+  const [teacherRows,showTeacherRows]=useState<Teacher[]>([])
 
   const handleMenuClick=(menuItem:string)=>{
     setShowUsers(false);
     setshowEventUpload(false);
     setshowTeacherData(false);
-    if(menuItem==='All Users'){
+    if(menuItem==='Registered Users'){
       setShowUsers(true)
     }
     else if(menuItem ==='Upload'){
@@ -45,7 +56,33 @@ const UsercollRef = collection(db,'admissionData')
   } 
   useEffect(()=>{
     getUsers()
+    getTeacher()
   },[])
+
+  const getTeacher = async () =>{
+    try{
+    const fetchQuery = await getDocs(TeacherCollRef)
+    const fetchTeachers:Teacher[] = fetchQuery.docs.map((doc)=>{
+      const data = doc.data();
+      return {
+        id:doc.id,
+        FirstName:data.FirstName,
+        LastName:data.LastName,
+        Mobile:data.Mobile,
+        Email:data.Email,
+        DOB:data.DOB,
+        City:data.City,
+        Address:data.Address,
+        cvFileUrl:data.cvFileUrl
+        
+      }
+    });
+    showTeacherRows(fetchTeachers)
+  }
+    catch(err){
+      console.log('Fetching error')
+    }
+}
   const getUsers = async () => {
     try {
       const fetchQuery = await getDocs(UsercollRef);
@@ -64,6 +101,9 @@ const UsercollRef = collection(db,'admissionData')
     } catch (error) {
       console.error('Error fetching users:', error);
     }
+
+   
+
   };
   return (
     <div className='admin-interface'>
@@ -74,7 +114,7 @@ const UsercollRef = collection(db,'admissionData')
           <p>Hello, Admin</p>
         </div>
         <li onClick={()=> handleMenuClick('Home')}><MdDashboard size={20}/>Home</li>  
-        <li onClick={()=> handleMenuClick('All Users')}><FaUsers size={20}/>All Users</li>
+        <li onClick={()=> handleMenuClick('Registered Users')}><FaUsers size={20}/>Registered <br></br>Users</li>
         <li onClick={()=> handleMenuClick('Upload')}><FaFileImage size={20}/>Upload</li>
         <li onClick={()=> handleMenuClick('Teacher Details')}><FaTeamspeak size={20}/>Teacher<br></br> Details</li>
 
@@ -85,7 +125,7 @@ const UsercollRef = collection(db,'admissionData')
         <div className="admin-content">
             {showUsers && <Allusers userRows={userRows}/>}
             {showEventUpload && <EventUploadForm/>}
-            {showTeacherData && <TeacherDetails/>}
+            {showTeacherData && <TeacherDetails teacherRows= {teacherRows}/>}
         </div>
 
         <div className='admin-logout-btn'>
