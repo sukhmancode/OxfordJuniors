@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react'
-import {FaUsers, FaFileImage} from 'react-icons/fa'
+import {FaUsers, FaFileImage, FaTeamspeak} from 'react-icons/fa'
 import { MdDashboard } from "react-icons/md";import Allusers from './Allusers'
 import {collection, getDocs} from 'firebase/firestore'
 import { db } from '../firebase/firebase';
 import EventUploadForm from './EventUploadForm';
+import TeacherDetails from '../pages/TeacherDetails';
 interface SidebarProps{
   logout : () =>void;
 }
@@ -22,20 +23,25 @@ interface User {
 const Sidebar:React.FC<SidebarProps> = ({logout}) => {
 const UsercollRef = collection(db,'admissionData')
 
-  
   const [showUsers,setShowUsers]=useState(false)
   const [showEventUpload,setshowEventUpload]=useState(false)
   const [userRows,setUserRows]=useState<User[]>([])
+  const [showTeacherData,setshowTeacherData]=useState(false)
 
   const handleMenuClick=(menuItem:string)=>{
+    setShowUsers(false);
+    setshowEventUpload(false);
+    setshowTeacherData(false);
     if(menuItem==='All Users'){
       setShowUsers(true)
     }
     else if(menuItem ==='Upload'){
-      setShowUsers(false)
       setshowEventUpload(true)
     }
-   
+    else if(menuItem==='Teacher Details'){
+      setshowTeacherData(true)
+    }
+    
   } 
   useEffect(()=>{
     getUsers()
@@ -70,22 +76,17 @@ const UsercollRef = collection(db,'admissionData')
         <li onClick={()=> handleMenuClick('Home')}><MdDashboard size={20}/>Home</li>  
         <li onClick={()=> handleMenuClick('All Users')}><FaUsers size={20}/>All Users</li>
         <li onClick={()=> handleMenuClick('Upload')}><FaFileImage size={20}/>Upload</li>
+        <li onClick={()=> handleMenuClick('Teacher Details')}><FaTeamspeak size={20}/>Teacher<br></br> Details</li>
+
+
         </ul>
         </div>
 
         <div className="admin-content">
-  {showUsers ? (
-    <Allusers userRows={userRows} />
-  ) : showEventUpload ? (
-    <div>
-      <EventUploadForm />
-    </div>
-  ) : (
-    <div>
-      <p>Hello User</p>
-    </div>
-  )}
-</div>
+            {showUsers && <Allusers userRows={userRows}/>}
+            {showEventUpload && <EventUploadForm/>}
+            {showTeacherData && <TeacherDetails/>}
+        </div>
 
         <div className='admin-logout-btn'>
             <button onClick={logout}>Log Out</button>

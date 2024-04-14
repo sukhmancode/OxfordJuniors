@@ -36,8 +36,6 @@ const App :React.FC=()=>{
       <Route path='/teacher' element={<Teachers/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>
       <Route path='/job' element={<JobApply/>}></Route>
-      <Route path='/AdminDashboard' element={<AdminDash/>}></Route>
-      <Route path='/Allusers' element={<Allusers/>}></Route>
     </Routes>
  
   </div>

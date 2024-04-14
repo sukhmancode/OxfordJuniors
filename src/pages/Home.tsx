@@ -12,7 +12,7 @@ const Home:React.FC = () => {
         <Nav/>
         <div  className="banner">
          <div className="banner-text" data-aos="fade-right">
-            <h1>"Nurturing young minds with Oxford's <small className='head-small'>academic <span style={{textDecoration:"line-through"}}>excellence</span>".</small></h1>
+            <h1>"<span style={{color:'tomato'}}>Nurturing</span> young minds with Oxford's <small className='head-small'>academic <span style={{textDecoration:"line-through",color:'tomato',textDecorationLine:'black'}}>excellence</span>".</small></h1>
             <p>Dream is often a child’s first introduction to school. The learning library surplus of online resources help new learners transition into the scholastic world of ABCs and 123s.</p>
             <Link to={'/contact'}>
             <button>Book a Visit</button>

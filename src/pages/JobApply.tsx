@@ -52,8 +52,18 @@ const JobApply:React.FC = () => {
             }
         }
     }
+    const handleMobileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const mobileVal = e.target.value;
+        const parsedMobile=parseInt(mobileVal)
+        setTeacherData({...teacherData,Mobile:parsedMobile})
+    }
     const handleAdd=async(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
+
+        if(!teacherData.cvFile){
+            toast.error('Please Upload your CV file')
+            return;
+        }
         try{
             await addDoc(collection(db,'TeacherData'),{
                 FirstName:teacherData.FirstName,
@@ -61,7 +71,7 @@ const JobApply:React.FC = () => {
                 Email:teacherData.Email,
                 Mobile:teacherData.Mobile,
                 Address:teacherData.Address,
-                City:teacherData.LastName,
+                City:teacherData.City,
                 DOB:teacherData.DOB,
                 cvFileName:teacherData.cvFile?.name || '',
                 cvFileUrl:teacherData.cvFileUrl || ''
@@ -94,23 +104,26 @@ const JobApply:React.FC = () => {
                 <div className='name-input-cover'>
                 <div className="name-input">
                     
-                    <input type="text" placeholder='Enter First Name'/>
+                    <input type="text" placeholder='Enter First Name' onChange={(e)=>setTeacherData({...teacherData,FirstName:e.target.value})}
+                    value={teacherData.FirstName}/>
                 </div>
                 <div className="name-input">
                     <input type="text" placeholder='Enter Last Name'
-                    onChange={(e)=>setTeacherData({...teacherData,FirstName:e.target.value})}
-                    value={teacherData.FirstName}/>
+                    onChange={(e)=>setTeacherData({...teacherData,LastName:e.target.value})}
+                    value={teacherData.LastName}/>
                 </div>
                 </div>
 
                 <div className="email-mobile-wrapper">
                     <div className="email-wrapper">
                         <input type="email" placeholder='Enter your Email'
-                        onChange={(e)=>setTeacherData({...teacherData,LastName:e.target.value})} 
-                        value={teacherData.LastName} />
+                        onChange={(e)=>setTeacherData({...teacherData,Email:e.target.value})} 
+                        value={teacherData.Email} />
                     </div>
                     <div className="mobile-wrapper">
-                        <input type="number" placeholder='Enter your Mobile' />
+                        <input type="number" placeholder='Enter your Mobile'
+                        onChange={handleMobileChange}
+                        value={teacherData.Mobile} />
                     </div>
                 </div>
 
@@ -133,11 +146,15 @@ const JobApply:React.FC = () => {
                     onChange={handleDateChange}
                     value={teacherData.DOB ? teacherData.DOB.toISOString().split('T')[0] : ''}
                     />
-                </div>
-                <div className="resume-upload">
+                     <div className="resume-upload">
                 <button className='upload-btn'><label htmlFor="upload-photo"><FaUpload className='upload-icon'/>Upload CV</label></button>
                     <input type="file" name="photo" id="upload-photo" accept='.pdf,.doc,.docx'
                     onChange={handleFileUpload}/>    
+                </div>
+                </div>
+               
+                <div className='admin-logout-btn ' style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <button type='submit' className=''>Submit Details</button>
                 </div>
             </form>
         </div>

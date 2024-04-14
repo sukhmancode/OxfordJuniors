@@ -10,11 +10,11 @@ interface User {
   email?: string | null;
   photoURL?: string | null;
 }
+
 const Admin: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState<User | null>(null);
-  const [logoutTimer, setLogoutTimer] = useState<NodeJS.Timeout | null>(null); // State to store logout timer
 
   const auth = getAuth(app);
 
@@ -28,32 +28,14 @@ const Admin: React.FC = () => {
       }
     });
 
-    return () => {
-      unsubscribe();
-      clearLogoutTimer();
-    };
+    return () => unsubscribe();
   }, []);
-
-  useEffect(() => {
-    if (user) {
-      setLogoutTimer(setTimeout(logoutUser, 15 * 60 * 10000));
-    } else {
-      clearLogoutTimer();
-    }
-  }, [user]);
-
-  const clearLogoutTimer = () => {
-    if (logoutTimer) {
-      clearTimeout(logoutTimer);
-      setLogoutTimer(null);
-    }
-  };
 
   const logoutUser = () => {
     signOut(auth)
       .then(() => {
         setUser(null);
-        toast.success('logged out');
+        toast.success('Logged out successfully');
       })
       .catch(error => {
         console.error('Error signing out:', error);
@@ -66,7 +48,6 @@ const Admin: React.FC = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
           setUser(userCredential.user);
-          setLogoutTimer(setTimeout(logoutUser, 15 * 60 * 10000));
           toast.success('Successfully logged in');
         })
         .catch(error => {
@@ -86,13 +67,9 @@ const Admin: React.FC = () => {
   return (
     <div className="admin">
       {user ? (
-        <div>
-          <AdminDash logout={logoutUser}
-          />
-        </div>
+        <AdminDash logout={logoutUser} />
       ) : (
         <div className="admin-wrapper">
-         
           <div>
             <form className="form-admin" onSubmit={handleSubmit}>
               <h1>Log In</h1>
@@ -111,7 +88,6 @@ const Admin: React.FC = () => {
               />
               <input type="submit" value="Login" />
             </form>
-            
           </div>
           <div className="admin-wrap-photo">
             <img src="admin-login.jpg" alt="" />
