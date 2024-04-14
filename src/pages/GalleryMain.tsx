@@ -13,10 +13,7 @@ import 'lightgallery/scss/lg-zoom.scss';
 // import plugins if you need
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
-import lgShare from 'lightgallery/plugins/share'
-import lgRotate from 'lightgallery/plugins/rotate'
-import lgVideo from 'lightgallery/plugins/video'
-import lgAutoplay from 'lightgallery/plugins/autoplay'
+
 
 const GalleryMain :React.FC= () => {
   useEffect(() => {

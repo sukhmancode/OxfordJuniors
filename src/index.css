@@ -159,6 +159,7 @@ a{
     text-decoration: none;
 }
 .contact{
+  
     background-color:var(--white-color)
 }
 .contact-footer{
@@ -187,8 +188,8 @@ a{
 }
 
 .cover-photo{
+    background-image: url('contact-cover.jpg');
     background-repeat: no-repeat;
-  
     background-size: cover;
     padding: 13rem 4rem;   
     display: flex;

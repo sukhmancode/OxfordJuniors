@@ -33,11 +33,11 @@ const Sidebar:React.FC<SidebarProps> = ({logout}) => {
 const UsercollRef = collection(db,'admissionData')
 const TeacherCollRef = collection (db ,'TeacherData')
 
-  const [showUsers,setShowUsers]=useState(false)
-  const [showEventUpload,setshowEventUpload]=useState(false)
-  const [userRows,setUserRows]=useState<User[]>([])
-  const [showTeacherData,setshowTeacherData]=useState(false)
-  const [teacherRows,showTeacherRows]=useState<Teacher[]>([])
+  const [showUsers,setShowUsers] = useState(false)
+  const [showEventUpload,setshowEventUpload] = useState(false)
+  const [userRows,setUserRows] = useState<User[]>([])
+  const [showTeacherData,setshowTeacherData] = useState(false)
+  const [teacherRows,showTeacherRows] = useState<Teacher[]>([])
 
   const handleMenuClick=(menuItem:string)=>{
     setShowUsers(false);
