@@ -20,15 +20,15 @@ const Home:React.FC = () => {
          </div>
 
          <div className="kid-image" data-aos="fade-left">
-          <img className='kid-img-main' src="kid-image.png" alt="" />
+          <img loading='lazy' className='kid-img-main' src="kid-image.png" alt="" />
 {/*
           <div className='ball-compo'>
-            <img src="ball.png" alt="" />
+            <img loading='lazy' src="ball.png" alt="" />
             <p>Funny Games</p>
           </div>
 
           <div className='teacher-compo'>
-            <img src="teacher.png" alt="" />
+            <img loading='lazy' src="teacher.png" alt="" />
             <p>Pro Teachers</p>
           </div>
   */}
@@ -45,7 +45,7 @@ const Home:React.FC = () => {
 
           <div className="feature-cards" >
             <div className="environment-card"data-aos="zoom-in" >
-              <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b01ca79ecfda9e10826fd_9443147_young_man_young%20man_cool%20boy_happy%20boy_icon%201%20(3)%201.png" alt="" />
+              <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b01ca79ecfda9e10826fd_9443147_young_man_young%20man_cool%20boy_happy%20boy_icon%201%20(3)%201.png" alt="" />
               <div className='environment-card-p'>
               <h3 style={{color:"#fff"}}>Home-like Environment</h3>
               <p className='p-white'>We create for children an home-like place so that your children come here with pleasure.</p>
@@ -53,7 +53,7 @@ const Home:React.FC = () => {
             </div>
 
             <div className="environment-card" data-aos="zoom-in">
-              <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b023a31836d27e3e3bab4_8721663_lock_security_protect_secure_icon%201%20(8).png" alt="" />
+              <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b023a31836d27e3e3bab4_8721663_lock_security_protect_secure_icon%201%20(8).png" alt="" />
               <div className='environment-card-p'>
               <h3>Safety and Security</h3>
               <p>Safety is above all else. We pay special attention to this. Special room plans have been developed.</p>
@@ -61,7 +61,7 @@ const Home:React.FC = () => {
             </div>
 
             <div className="environment-card" data-aos="zoom-in">
-              <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b0346f5762dd76c219ea1_9254052_certificate_degree_diploma_ribbon%20badge_quality_icon%201%20(3).png" alt="" />
+              <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b0346f5762dd76c219ea1_9254052_certificate_degree_diploma_ribbon%20badge_quality_icon%201%20(3).png" alt="" />
               <div className='environment-card-p'>
               <h3 style={{color:"#fff"}}>Quality Educators</h3>
               <p className='p-white'>A child in kindergarten will not only have fun and relax but also develop. We learn in the form of games.</p>
@@ -69,7 +69,7 @@ const Home:React.FC = () => {
             </div>
 
             <div className="environment-card" data-aos="zoom-in">
-              <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b034598f8dcb8e04e871e_9053991_leisure_dice_gambling_gamble_casino_icon%201%20(3).png" alt="" />
+              <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/632b034598f8dcb8e04e871e_9053991_leisure_dice_gambling_gamble_casino_icon%201%20(3).png" alt="" />
               <div className='environment-card-p'>
               <h3>Play to Learn</h3>
               <p>As we said learn and play. In this way, we encourage the child to learn from an early age.</p>
@@ -92,7 +92,7 @@ const Home:React.FC = () => {
           <div className="all-features">
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315d7c199d5e4d9def4a91_9428043_basketball_game_sports_play_icon%203.webp" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315d7c199d5e4d9def4a91_9428043_basketball_game_sports_play_icon%203.webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Professional Teachers</h3>
@@ -103,7 +103,7 @@ const Home:React.FC = () => {
           
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5f29b5ad319ca83ef2_7923951_book_reading_school_education_library_icon%202.webp" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5f29b5ad319ca83ef2_7923951_book_reading_school_education_library_icon%202.webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Education Program</h3>
@@ -113,7 +113,7 @@ const Home:React.FC = () => {
 
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b609942dbfcf2753083_9213103_toy_play_game_kids_education_icon%201.webp" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b609942dbfcf2753083_9213103_toy_play_game_kids_education_icon%201.webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Funny Games</h3>
@@ -124,7 +124,7 @@ const Home:React.FC = () => {
             
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5c24771a33d8879876_7923951_book_reading_school_education_library_icon%203.webp" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5c24771a33d8879876_7923951_book_reading_school_education_library_icon%203.webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Sport Program</h3>
@@ -134,7 +134,7 @@ const Home:React.FC = () => {
 
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5ed50e5cb0deebc079_9213103_toy_play_game_kids_education_icon%201%20(1).webp" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5ed50e5cb0deebc079_9213103_toy_play_game_kids_education_icon%201%20(1).webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Easy To Learn</h3>
@@ -144,7 +144,7 @@ const Home:React.FC = () => {
 
           <div className="oppurtunity-features">
             <div className='oppurtunity-image'>
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5d2e4695673c8cc0fb_9428043_basketball_game_sports_play_icon%204.webp" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63315b5d2e4695673c8cc0fb_9428043_basketball_game_sports_play_icon%204.webp" alt="" />
             </div>
             <div className="oppurtunity-feature">
               <h3>Easy To Learn</h3>
@@ -156,7 +156,7 @@ const Home:React.FC = () => {
 
        <section className='look-around-section'>
         <div className="look-around-img" data-aos="fade-right">
-          <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63316f6e540a10031a2d0c6e_8969101_smartphone_childhood_toys_kids_icon%201.webp" alt="" />
+          <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63316f6e540a10031a2d0c6e_8969101_smartphone_childhood_toys_kids_icon%201.webp" alt="" />
         </div>
         <div className="look-around-para" data-aos="fade-left">
           <h2>Come Over And <span style={{color:"#253b70"}}>Look Around</span></h2>

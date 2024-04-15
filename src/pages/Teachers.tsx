@@ -21,7 +21,7 @@ const Teachers:React.FC = () => {
             {
               TeacherData.map((info,idx)=> (
               <div key={idx}>
-                <img src={info.img} alt="" />
+                <img src={info.img} alt="" loading='lazy'/>
                 <h2 className='teacher-name'>{info.name}</h2>
                 <p>{info.designation}</p>
               </div>

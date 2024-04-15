@@ -131,7 +131,7 @@ const Admission :React.FC= () => {
             <p>Visit KinderGarten during an Open House.</p>
           </div>
           <div className="step-arrow">
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
           </div>
           <div className="admission-card">
             <h1>2</h1>
@@ -139,7 +139,7 @@ const Admission :React.FC= () => {
             <p>Submit an application with the appropriate days.</p>
           </div>
           <div className="step-arrow">
-            <img src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
+            <img loading='lazy' src="https://assets-global.website-files.com/63297a6e0db55f763a6d4d9a/63513f318476367ed06462ee_arrow.png" alt="" />
           </div>
           <div className="admission-card">
           <h1>3</h1>

@@ -49,7 +49,7 @@ const Event:React.FC = () => {
           {
             eventData.map((article)=>(
               <div className='news-content'>
-                <img src={article.imageUrl} alt=""width={300} />
+                <img src={article.imageUrl} alt=""width={300} loading='lazy'/>
               <h2>{article.title}</h2>
               <p>{article.description.slice(0,50)}</p>
               </div>

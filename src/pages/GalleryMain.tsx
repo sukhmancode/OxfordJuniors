@@ -36,30 +36,34 @@ const GalleryMain :React.FC= () => {
             speed={650}
             plugins={[lgThumbnail, lgZoom]}>
             <a className="image" href="gall-1.jpg">
-                <img className='gall-image' alt="img1" src="gall-1.jpg"/>
+                <img loading='lazy' className='gall-image' alt="img1" src="gall-1.jpg"/>
             </a>
             <a className="image"href="gall-3.jpg">
-                <img className='gall-image' alt="img2" src="gall-3.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
             </a>
             <a className="image"href="gall-4.jpg">
-                <img className='gall-image' alt="img2" src="gall-4.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-4.jpg" />
             </a>  <a className="image"href="gall-5.jpg" >
-                <img className='gall-image' alt="img2" src="gall-5.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-5.jpg" />
             </a> 
              <a className="image"href="gall-3.jpg">
-                <img className='gall-image' alt="img2" src="gall-3.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
             </a> 
              <a className="image"href="gall-3.jpg">
-                <img className='gall-image' alt="img2" src="gall-3.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
             </a> 
+            <a className="image"href="guru-gallery.jpg">
+                <img loading='lazy' className='gall-image' alt="img2" src="guru-gallery.jpg" />
+            </a>
              <a className="image"href="gall-3.jpg">
-                <img className='gall-image' alt="img2" src="gall-3.jpg" />
-            </a> 
-             <a className="image"href="gall-3.jpg">
-                <img className='gall-image' alt="img2" src="gall-3.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
             </a>
               <a className="image"href="gall-3.jpg">
-                <img className='gall-image' alt="img2" src="gall-3.jpg" />
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
+            </a>
+
+            <a className="image"href="guru-gallery.jpg">
+                <img loading='lazy' className='gall-image' alt="img2" src="guru-gallery.jpg" />
             </a>
         </LightGallery>
       </div>

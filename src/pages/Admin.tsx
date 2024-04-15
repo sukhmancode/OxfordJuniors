@@ -90,7 +90,7 @@ const Admin: React.FC = () => {
             </form>
           </div>
           <div className="admin-wrap-photo">
-            <img src="admin-login.jpg" alt="" />
+            <img loading='lazy' src="admin-login.jpg" alt="" />
           </div>
         </div>
       )}

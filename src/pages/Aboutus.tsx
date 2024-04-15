@@ -23,7 +23,7 @@ const Aboutus:React.FC = () => {
             {
               AboutUs.map((about,idx)=>{
          return <div className='card'key={idx} data-aos="fade-right">
-                  <img className='about-card-img' src={about.img} alt=""/>
+                  <img loading='lazy' className='about-card-img' src={about.img} alt=""/>
                   <div className="about-card-bg" style={{backgroundColor:about.bColor,color:'#fff'}}>
                   <h2>{about.text}</h2>
                   <p style={{color:'#fff'}}>{about.content}</p>
@@ -51,7 +51,7 @@ const Aboutus:React.FC = () => {
             <div className="welcome-check-here">
               <div className="tick">
               <div className="tick-content">
-                <img src="checkmark.svg" alt="" />
+                <img loading='lazy' src="checkmark.svg" alt="" />
               </div>
               </div>
               <p>Supporting your child’s personality</p>
@@ -61,7 +61,7 @@ const Aboutus:React.FC = () => {
             <div className="welcome-check-here">
               <div className="tick">
               <div className="tick-content">
-              <img src="checkmark.svg" alt="" />
+              <img loading='lazy' src="checkmark.svg" alt="" />
               </div>
               </div>
               <p>Professional & dedicated teachers.</p>
@@ -71,7 +71,7 @@ const Aboutus:React.FC = () => {
             <div className="welcome-check-here">
               <div className="tick">
               <div className="tick-content">
-              <img src="checkmark.svg" alt="" />
+              <img loading='lazy' src="checkmark.svg" alt="" />
               </div>
               </div>
               <p>Indoor and outdoor creative games</p>
@@ -83,22 +83,22 @@ const Aboutus:React.FC = () => {
 
       <div className="games" data-aos="zoom-out">
         <div className="game1">
-            <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087cc4cfbf5e0002176bee2" alt="" />
+            <img loading='lazy' src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6087cc4cfbf5e0002176bee2" alt="" />
             <h2>Art Classes</h2>
             <p>We will reveal your child's talents in time in our art classes</p>
         </div>
         <div className="game2">
-        <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fabcf12300218a6913" alt="" />
+        <img loading='lazy' src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fabcf12300218a6913" alt="" />
             <h2>Sport Activities</h2>
             <p>We have children's gymnastics, swimming, tennis, etc.</p>
         </div>
         <div className="game3">
-        <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fa73610400224f5dd8" alt="" />
+        <img loading='lazy' src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fa73610400224f5dd8" alt="" />
             <h2>Mind Games</h2>
             <p>Games that develop the logical thinking of your kid.</p>
         </div>
         <div className="game4">
-        <img src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fac2ca7d0021aee050" alt="" />
+        <img loading='lazy' src="https://res2.yourwebsite.life/res/608036965dfd14002174d27e/6086c9fac2ca7d0021aee050" alt="" />
             <h2>Table/Floor Toys</h2>
             <p>We have all your child's favorite toys! They are all completely safe.</p>
         </div>
