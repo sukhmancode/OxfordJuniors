@@ -46,8 +46,8 @@ const GalleryMain :React.FC= () => {
             </a>  <a className="image"href="gall-5.jpg" >
                 <img loading='lazy' className='gall-image' alt="img2" src="gall-5.jpg" />
             </a> 
-             <a className="image"href="gall-3.jpg">
-                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
+             <a className="image"href="gall-photo3.jpg">
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-photo3.jpg" />
             </a> 
              <a className="image"href="gall-3.jpg">
                 <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
@@ -55,11 +55,11 @@ const GalleryMain :React.FC= () => {
             <a className="image"href="guru-gallery.jpg">
                 <img loading='lazy' className='gall-image' alt="img2" src="guru-gallery.jpg" />
             </a>
-             <a className="image"href="gall-3.jpg">
-                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
+             <a className="image"href="group-photo.jpg">
+                <img loading='lazy' className='gall-image' alt="img2" src="group-photo.jpg" />
             </a>
-              <a className="image"href="gall-3.jpg">
-                <img loading='lazy' className='gall-image' alt="img2" src="gall-3.jpg" />
+              <a className="image"href="gall-photo4.jpg">
+                <img loading='lazy' className='gall-image' alt="img2" src="gall-photo4.jpg" />
             </a>
 
             <a className="image"href="guru-gallery.jpg">

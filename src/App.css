@@ -559,7 +559,8 @@ color: var(--tomato-color);
 }
 .image img{
     width: 400px;
-    height: fit-content;
+    height: 300px;
+    object-fit: cover;
     cursor: pointer;
   border-radius: 2rem;
 }
