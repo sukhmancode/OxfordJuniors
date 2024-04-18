@@ -6,7 +6,7 @@ const Gallery:React.FC= () => {
     <div className='gall-dropdown'>
       <ul className='about-dropdown-list'>
         <Link to={'/gallery'}>
-         <li><PiGooglePhotosLogoDuotone fill='tomato' size={30} />Photos</li>
+         <li><PiGooglePhotosLogoDuotone fill='tomato' size={31} />Photos</li>
         </Link>
       </ul>
     </div>
